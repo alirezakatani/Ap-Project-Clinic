@@ -46,14 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Financial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Financial.Designer.cs">
+      <DependentUpon>Financial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rating Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rating Form.Designer.cs">
+      <DependentUpon>Rating Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medical Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>Medical Form.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome Form.Designer.cs">
+      <DependentUpon>Welcome Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Financial.resx">
+      <DependentUpon>Financial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medical Form.resx">
+      <DependentUpon>Medical Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rating Form.resx">
+      <DependentUpon>Rating Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome Form.resx">
+      <DependentUpon>Welcome Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
