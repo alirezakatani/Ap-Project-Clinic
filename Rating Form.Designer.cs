@@ -32,12 +32,7 @@ namespace Ap_Project_Clinic_
             this.btnratings = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ratetime = new System.Windows.Forms.DateTimePicker();
-            this.cbroot = new System.Windows.Forms.ComboBox();
-            this.cbsu2 = new System.Windows.Forms.ComboBox();
-            this.cbsu1 = new System.Windows.Forms.ComboBox();
-            this.cbexam = new System.Windows.Forms.ComboBox();
             this.rbroot = new System.Windows.Forms.RadioButton();
             this.rb1serface = new System.Windows.Forms.RadioButton();
             this.rbsurface2 = new System.Windows.Forms.RadioButton();
@@ -63,9 +58,16 @@ namespace Ap_Project_Clinic_
             this.chkodd = new System.Windows.Forms.RadioButton();
             this.chkeven = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.doctorform = new System.Windows.Forms.Panel();
+            this.cbroot = new System.Windows.Forms.ComboBox();
+            this.cbsu2 = new System.Windows.Forms.ComboBox();
+            this.cbsu1 = new System.Windows.Forms.ComboBox();
+            this.cbexam = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.doctorform.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnratings
@@ -91,11 +93,8 @@ namespace Ap_Project_Clinic_
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.doctorform);
             this.groupBox1.Controls.Add(this.ratetime);
-            this.groupBox1.Controls.Add(this.cbroot);
-            this.groupBox1.Controls.Add(this.cbsu2);
-            this.groupBox1.Controls.Add(this.cbsu1);
-            this.groupBox1.Controls.Add(this.cbexam);
             this.groupBox1.Controls.Add(this.rbroot);
             this.groupBox1.Controls.Add(this.rb1serface);
             this.groupBox1.Controls.Add(this.rbsurface2);
@@ -108,63 +107,12 @@ namespace Ap_Project_Clinic_
             this.groupBox1.Text = "Service and Doctors";
             this.groupBox1.BindingContextChanged += new System.EventHandler(this.groupBox1_BindingContextChanged);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(642, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 20);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Date of turn";
-            // 
             // ratetime
             // 
             this.ratetime.Location = new System.Drawing.Point(746, 128);
             this.ratetime.Name = "ratetime";
             this.ratetime.Size = new System.Drawing.Size(200, 22);
             this.ratetime.TabIndex = 13;
-            // 
-            // cbroot
-            // 
-            this.cbroot.FormattingEnabled = true;
-            this.cbroot.Items.AddRange(new object[] {
-            "Doctor AmirhoseinKatani"});
-            this.cbroot.Location = new System.Drawing.Point(492, 126);
-            this.cbroot.Name = "cbroot";
-            this.cbroot.Size = new System.Drawing.Size(121, 24);
-            this.cbroot.TabIndex = 12;
-            // 
-            // cbsu2
-            // 
-            this.cbsu2.FormattingEnabled = true;
-            this.cbsu2.Items.AddRange(new object[] {
-            "Doctor Abarghoiee"});
-            this.cbsu2.Location = new System.Drawing.Point(339, 126);
-            this.cbsu2.Name = "cbsu2";
-            this.cbsu2.Size = new System.Drawing.Size(121, 24);
-            this.cbsu2.TabIndex = 11;
-            // 
-            // cbsu1
-            // 
-            this.cbsu1.FormattingEnabled = true;
-            this.cbsu1.Items.AddRange(new object[] {
-            "Doctor Mah"});
-            this.cbsu1.Location = new System.Drawing.Point(162, 126);
-            this.cbsu1.Name = "cbsu1";
-            this.cbsu1.Size = new System.Drawing.Size(121, 24);
-            this.cbsu1.TabIndex = 10;
-            // 
-            // cbexam
-            // 
-            this.cbexam.FormattingEnabled = true;
-            this.cbexam.Items.AddRange(new object[] {
-            "Doctor taleb"});
-            this.cbexam.Location = new System.Drawing.Point(6, 126);
-            this.cbexam.Name = "cbexam";
-            this.cbexam.Size = new System.Drawing.Size(121, 24);
-            this.cbexam.TabIndex = 5;
             // 
             // rbroot
             // 
@@ -340,7 +288,7 @@ namespace Ap_Project_Clinic_
             this.txtresult.Enabled = false;
             this.txtresult.Location = new System.Drawing.Point(799, 564);
             this.txtresult.Name = "txtresult";
-            this.txtresult.Size = new System.Drawing.Size(175, 22);
+            this.txtresult.Size = new System.Drawing.Size(214, 22);
             this.txtresult.TabIndex = 19;
             // 
             // chkrestrictions
@@ -432,6 +380,71 @@ namespace Ap_Project_Clinic_
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Have Problem";
             // 
+            // doctorform
+            // 
+            this.doctorform.Controls.Add(this.cbroot);
+            this.doctorform.Controls.Add(this.cbsu2);
+            this.doctorform.Controls.Add(this.cbsu1);
+            this.doctorform.Controls.Add(this.cbexam);
+            this.doctorform.Location = new System.Drawing.Point(0, 101);
+            this.doctorform.Name = "doctorform";
+            this.doctorform.Size = new System.Drawing.Size(631, 69);
+            this.doctorform.TabIndex = 21;
+            // 
+            // cbroot
+            // 
+            this.cbroot.Enabled = false;
+            this.cbroot.FormattingEnabled = true;
+            this.cbroot.Items.AddRange(new object[] {
+            "Doctor AmirhoseinKatani"});
+            this.cbroot.Location = new System.Drawing.Point(489, 29);
+            this.cbroot.Name = "cbroot";
+            this.cbroot.Size = new System.Drawing.Size(121, 24);
+            this.cbroot.TabIndex = 24;
+            // 
+            // cbsu2
+            // 
+            this.cbsu2.Enabled = false;
+            this.cbsu2.FormattingEnabled = true;
+            this.cbsu2.Items.AddRange(new object[] {
+            "Doctor Abarghoiee"});
+            this.cbsu2.Location = new System.Drawing.Point(336, 29);
+            this.cbsu2.Name = "cbsu2";
+            this.cbsu2.Size = new System.Drawing.Size(121, 24);
+            this.cbsu2.TabIndex = 23;
+            // 
+            // cbsu1
+            // 
+            this.cbsu1.Enabled = false;
+            this.cbsu1.FormattingEnabled = true;
+            this.cbsu1.Items.AddRange(new object[] {
+            "Doctor Mah"});
+            this.cbsu1.Location = new System.Drawing.Point(159, 29);
+            this.cbsu1.Name = "cbsu1";
+            this.cbsu1.Size = new System.Drawing.Size(121, 24);
+            this.cbsu1.TabIndex = 22;
+            // 
+            // cbexam
+            // 
+            this.cbexam.FormattingEnabled = true;
+            this.cbexam.Items.AddRange(new object[] {
+            "Doctor taleb"});
+            this.cbexam.Location = new System.Drawing.Point(3, 29);
+            this.cbexam.Name = "cbexam";
+            this.cbexam.Size = new System.Drawing.Size(121, 24);
+            this.cbexam.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label8.Location = new System.Drawing.Point(637, 130);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 20);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Date of turn";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,6 +466,7 @@ namespace Ap_Project_Clinic_
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.doctorform.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,13 +481,8 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.RadioButton rbroot;
         private System.Windows.Forms.RadioButton rb1serface;
         private System.Windows.Forms.RadioButton rbsurface2;
-        private System.Windows.Forms.ComboBox cbroot;
-        private System.Windows.Forms.ComboBox cbsu2;
-        private System.Windows.Forms.ComboBox cbsu1;
-        private System.Windows.Forms.ComboBox cbexam;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker ratetime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtname;
@@ -494,5 +503,11 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.RadioButton chkodd;
         private System.Windows.Forms.RadioButton chkeven;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel doctorform;
+        private System.Windows.Forms.ComboBox cbroot;
+        private System.Windows.Forms.ComboBox cbsu2;
+        private System.Windows.Forms.ComboBox cbsu1;
+        private System.Windows.Forms.ComboBox cbexam;
     }
 }

@@ -22,7 +22,7 @@ namespace Ap_Project_Clinic_
         int minutedarmansathi1 = 20;
         int minutedarmansathi2 = 30;
         int minutedarmanreshe = 40;
-        public nobatdehi(string name, string familyname, string idnumber, string work, string phone, DateTime date,string fileid,string doctornames,Boolean ev,Boolean od)
+        public nobatdehi(string name, string familyname, string idnumber, string work, string phone, DateTime date, string fileid, string doctornames, Boolean ev, Boolean od)
         {
             this.work = work;
             this.name = name;
@@ -37,7 +37,7 @@ namespace Ap_Project_Clinic_
             this.date = date;
             this.fileid = fileid;
         }
-        public nobatdehi(DateTime date,string fileid,string work,string doctornames, Boolean ev, Boolean od)
+        public nobatdehi(DateTime date, string fileid, string work, string doctornames, Boolean ev, Boolean od)
         {
             this.date = date;
             this.fileid = fileid;
@@ -93,7 +93,8 @@ namespace Ap_Project_Clinic_
                 nob = x.Split('*');
                 string[] stime = nob[0].Split('/');
                 string[] ttime = nob[1].Split(':');
-                if (Convert.ToInt32(stime[0]) == date.Year && Convert.ToInt32(stime[1]) == date.Month && Convert.ToInt32(stime[2]) == date.Day)
+                DateTime day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
+                if (Convert.ToInt32(stime[0]) == date.Year && Convert.ToInt32(stime[1]) == date.Month && Convert.ToInt32(stime[2]) == date.Day && day.DayOfWeek != DayOfWeek.Friday)
                 {
                     timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
                 }
@@ -115,7 +116,6 @@ namespace Ap_Project_Clinic_
                 zs = zs.AddMinutes(minute);
                 writeinfile(zs);
                 return zs;
-
             }
             else
                 return new DateTime(1, 1, 1, 1, 1, 1);//like flag
@@ -150,13 +150,24 @@ namespace Ap_Project_Clinic_
                 nob = x.Split('*');
                 string[] stime = nob[0].Split('/');
                 string[] ttime = nob[1].Split(':');
-                if (Convert.ToInt32(stime[2]) >= date.Day)
+                DateTime day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
+                if (noteven == true)
                 {
-                    timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+                    if (Convert.ToInt32(stime[2]) >= date.Day&&day.DayOfWeek!=DayOfWeek.Monday&& day.DayOfWeek != DayOfWeek.Saturday&& day.DayOfWeek != DayOfWeek.Wednesday && day.DayOfWeek != DayOfWeek.Friday)
+                    {
+                        timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+                    }
                 }
+                else
+                {
+                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Tuesday && day.DayOfWeek != DayOfWeek.Thursday&& day.DayOfWeek != DayOfWeek.Friday)
+                    {
+                        timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+                    }
+                }
+
                 k++;
             }
-
             timenoabt.Sort();
             for (int i = 0; i < timenoabt.Count - 1; i++)
             {
@@ -170,12 +181,9 @@ namespace Ap_Project_Clinic_
                         zs = zs.AddMinutes(minute);
                         writeinfile(zs);
                         return zs;
-
                     }
                     else
                         continue;
-
-
                 }
 
 
@@ -183,8 +191,6 @@ namespace Ap_Project_Clinic_
             DateTime ooop = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day + 1, 15, 0, 0);
             writeinfile(ooop);
             return ooop;
-
-
         }
         public int getfromfileid(string fileid)
         {
@@ -200,11 +206,11 @@ namespace Ap_Project_Clinic_
                     this.idnumber = personinform[7];
                     return 1;
                 }
-                  
+
             }
             return 0;
         }
-  
+
 
     }
 }

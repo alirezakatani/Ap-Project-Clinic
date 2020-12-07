@@ -7,7 +7,6 @@ namespace Ap_Project_Clinic_
     {
 
         string path = Application.StartupPath;
-
         public Form2()
         {
             InitializeComponent();
@@ -19,6 +18,21 @@ namespace Ap_Project_Clinic_
             nobatdehi x;
             string work = "";
             string doctorname = "";
+            if(chkeven.Checked==true)
+            {
+                if(date.DayOfWeek!=DayOfWeek.Saturday&& date.DayOfWeek != DayOfWeek.Monday&& date.DayOfWeek != DayOfWeek.Wednesday)
+                {
+                    MessageBox.Show("please inter true date,this date is " + date.DayOfWeek + " and isnt odd");
+                }
+            }
+            else
+            {
+                if (date.DayOfWeek != DayOfWeek.Sunday && date.DayOfWeek != DayOfWeek.Tuesday && date.DayOfWeek != DayOfWeek.Thursday)
+                {
+                    MessageBox.Show("please inter true date,this date is " + date.DayOfWeek + " and isnt even");
+                }
+
+            }
             if (rbExamination.Checked == true)
             {
                 work = "moayene";
@@ -64,12 +78,31 @@ namespace Ap_Project_Clinic_
                 }
             }
             else
-                txtresult.Text = s.ToString();
+                txtresult.Text = s.ToString()+" "+s.DayOfWeek;
 
         }
 
         private void groupBox1_BindingContextChanged(object sender, EventArgs e)
         {
+            doctorform.Enabled = false;
+            if (rbExamination.Checked == true)
+            {
+                cbexam.Enabled = true;
+            }
+            else if (rb1serface.Checked == true)
+            {
+                cbsu1.Enabled = true;
+            }
+
+            else if (rbsurface2.Checked == true)
+            {
+                cbsu2.Enabled = true;
+
+            }
+            else if (rbroot.Checked == true)
+            {
+                cbroot.Enabled = true;
+            }
 
         }
     }
