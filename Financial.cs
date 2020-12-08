@@ -16,5 +16,10 @@ namespace Ap_Project_Clinic_
         {
             InitializeComponent();
         }
+
+        private void btnsalary_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

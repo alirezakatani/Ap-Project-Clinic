@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace Ap_Project_Clinic_
 {
-    public partial class Form2 : Form
+    public partial class rateform : Form
     {
 
         string path = Application.StartupPath;
-        public Form2()
+        public rateform()
         {
             InitializeComponent();
         }
@@ -104,6 +104,10 @@ namespace Ap_Project_Clinic_
                 cbroot.Enabled = true;
             }
 
+        }
+        public static string getpath()
+        {
+            return Application.StartupPath;
         }
     }
 }

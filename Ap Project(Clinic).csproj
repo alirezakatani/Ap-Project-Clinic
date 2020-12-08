@@ -46,6 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cliniccosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliniccosts.Designer.cs">
+      <DependentUpon>cliniccosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employes.cs" />
+    <Compile Include="employessalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employessalary.Designer.cs">
+      <DependentUpon>employessalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Financial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +94,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cliniccosts.resx">
+      <DependentUpon>cliniccosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employessalary.resx">
+      <DependentUpon>employessalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Financial.resx">
       <DependentUpon>Financial.cs</DependentUpon>
     </EmbeddedResource>

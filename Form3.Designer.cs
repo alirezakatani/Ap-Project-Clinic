@@ -154,7 +154,7 @@ namespace Ap_Project_Clinic_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 453);
+            this.ClientSize = new System.Drawing.Size(428, 453);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtaccount);
             this.Controls.Add(this.label5);

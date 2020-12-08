@@ -32,7 +32,6 @@ namespace Ap_Project_Clinic_
             this.label1 = new System.Windows.Forms.Label();
             this.btnEquity = new System.Windows.Forms.Button();
             this.btnsalary = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnClinic = new System.Windows.Forms.Button();
             this.btnmedical = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -66,21 +65,12 @@ namespace Ap_Project_Clinic_
             this.btnsalary.TabIndex = 3;
             this.btnsalary.Text = "employees\' salary";
             this.btnsalary.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(98, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 52);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "employees\' salary";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnsalary.Click += new System.EventHandler(this.btnsalary_Click);
             // 
             // btnClinic
             // 
             this.btnClinic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnClinic.Location = new System.Drawing.Point(98, 278);
+            this.btnClinic.Location = new System.Drawing.Point(98, 217);
             this.btnClinic.Name = "btnClinic";
             this.btnClinic.Size = new System.Drawing.Size(153, 52);
             this.btnClinic.TabIndex = 5;
@@ -90,7 +80,7 @@ namespace Ap_Project_Clinic_
             // btnmedical
             // 
             this.btnmedical.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnmedical.Location = new System.Drawing.Point(98, 336);
+            this.btnmedical.Location = new System.Drawing.Point(98, 275);
             this.btnmedical.Name = "btnmedical";
             this.btnmedical.Size = new System.Drawing.Size(153, 52);
             this.btnmedical.TabIndex = 6;
@@ -104,7 +94,6 @@ namespace Ap_Project_Clinic_
             this.ClientSize = new System.Drawing.Size(386, 513);
             this.Controls.Add(this.btnmedical);
             this.Controls.Add(this.btnClinic);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnsalary);
             this.Controls.Add(this.btnEquity);
             this.Controls.Add(this.label1);
@@ -120,7 +109,6 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEquity;
         private System.Windows.Forms.Button btnsalary;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnClinic;
         private System.Windows.Forms.Button btnmedical;
     }

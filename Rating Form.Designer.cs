@@ -1,7 +1,7 @@
 ﻿
 namespace Ap_Project_Clinic_
 {
-    partial class Form2
+    partial class rateform
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,12 @@ namespace Ap_Project_Clinic_
             this.btnratings = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.doctorform = new System.Windows.Forms.Panel();
+            this.cbroot = new System.Windows.Forms.ComboBox();
+            this.cbsu2 = new System.Windows.Forms.ComboBox();
+            this.cbsu1 = new System.Windows.Forms.ComboBox();
+            this.cbexam = new System.Windows.Forms.ComboBox();
             this.ratetime = new System.Windows.Forms.DateTimePicker();
             this.rbroot = new System.Windows.Forms.RadioButton();
             this.rb1serface = new System.Windows.Forms.RadioButton();
@@ -53,21 +59,15 @@ namespace Ap_Project_Clinic_
             this.txtresult = new System.Windows.Forms.TextBox();
             this.chkrestrictions = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkhaveid = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.chkhaveid = new System.Windows.Forms.RadioButton();
             this.chkodd = new System.Windows.Forms.RadioButton();
             this.chkeven = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.doctorform = new System.Windows.Forms.Panel();
-            this.cbroot = new System.Windows.Forms.ComboBox();
-            this.cbsu2 = new System.Windows.Forms.ComboBox();
-            this.cbsu1 = new System.Windows.Forms.ComboBox();
-            this.cbexam = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.doctorform.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.doctorform.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnratings
@@ -106,6 +106,71 @@ namespace Ap_Project_Clinic_
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Service and Doctors";
             this.groupBox1.BindingContextChanged += new System.EventHandler(this.groupBox1_BindingContextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label8.Location = new System.Drawing.Point(637, 130);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 20);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Date of turn";
+            // 
+            // doctorform
+            // 
+            this.doctorform.Controls.Add(this.cbroot);
+            this.doctorform.Controls.Add(this.cbsu2);
+            this.doctorform.Controls.Add(this.cbsu1);
+            this.doctorform.Controls.Add(this.cbexam);
+            this.doctorform.Location = new System.Drawing.Point(0, 101);
+            this.doctorform.Name = "doctorform";
+            this.doctorform.Size = new System.Drawing.Size(631, 69);
+            this.doctorform.TabIndex = 21;
+            // 
+            // cbroot
+            // 
+            this.cbroot.Enabled = false;
+            this.cbroot.FormattingEnabled = true;
+            this.cbroot.Items.AddRange(new object[] {
+            "Doctor AmirhoseinKatani"});
+            this.cbroot.Location = new System.Drawing.Point(489, 29);
+            this.cbroot.Name = "cbroot";
+            this.cbroot.Size = new System.Drawing.Size(121, 24);
+            this.cbroot.TabIndex = 24;
+            // 
+            // cbsu2
+            // 
+            this.cbsu2.Enabled = false;
+            this.cbsu2.FormattingEnabled = true;
+            this.cbsu2.Items.AddRange(new object[] {
+            "Doctor Abarghoiee"});
+            this.cbsu2.Location = new System.Drawing.Point(336, 29);
+            this.cbsu2.Name = "cbsu2";
+            this.cbsu2.Size = new System.Drawing.Size(121, 24);
+            this.cbsu2.TabIndex = 23;
+            // 
+            // cbsu1
+            // 
+            this.cbsu1.Enabled = false;
+            this.cbsu1.FormattingEnabled = true;
+            this.cbsu1.Items.AddRange(new object[] {
+            "Doctor Mah"});
+            this.cbsu1.Location = new System.Drawing.Point(159, 29);
+            this.cbsu1.Name = "cbsu1";
+            this.cbsu1.Size = new System.Drawing.Size(121, 24);
+            this.cbsu1.TabIndex = 22;
+            // 
+            // cbexam
+            // 
+            this.cbexam.FormattingEnabled = true;
+            this.cbexam.Items.AddRange(new object[] {
+            "Doctor taleb"});
+            this.cbexam.Location = new System.Drawing.Point(3, 29);
+            this.cbexam.Name = "cbexam";
+            this.cbexam.Size = new System.Drawing.Size(121, 24);
+            this.cbexam.TabIndex = 21;
             // 
             // ratetime
             // 
@@ -324,17 +389,6 @@ namespace Ap_Project_Clinic_
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
-            // chkhaveid
-            // 
-            this.chkhaveid.AutoSize = true;
-            this.chkhaveid.Location = new System.Drawing.Point(13, 27);
-            this.chkhaveid.Name = "chkhaveid";
-            this.chkhaveid.Size = new System.Drawing.Size(130, 21);
-            this.chkhaveid.TabIndex = 21;
-            this.chkhaveid.TabStop = true;
-            this.chkhaveid.Text = "Patient file code";
-            this.chkhaveid.UseVisualStyleBackColor = true;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -345,6 +399,17 @@ namespace Ap_Project_Clinic_
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "chknewpatient";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // chkhaveid
+            // 
+            this.chkhaveid.AutoSize = true;
+            this.chkhaveid.Location = new System.Drawing.Point(13, 27);
+            this.chkhaveid.Name = "chkhaveid";
+            this.chkhaveid.Size = new System.Drawing.Size(130, 21);
+            this.chkhaveid.TabIndex = 21;
+            this.chkhaveid.TabStop = true;
+            this.chkhaveid.Text = "Patient file code";
+            this.chkhaveid.UseVisualStyleBackColor = true;
             // 
             // chkodd
             // 
@@ -380,72 +445,7 @@ namespace Ap_Project_Clinic_
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Have Problem";
             // 
-            // doctorform
-            // 
-            this.doctorform.Controls.Add(this.cbroot);
-            this.doctorform.Controls.Add(this.cbsu2);
-            this.doctorform.Controls.Add(this.cbsu1);
-            this.doctorform.Controls.Add(this.cbexam);
-            this.doctorform.Location = new System.Drawing.Point(0, 101);
-            this.doctorform.Name = "doctorform";
-            this.doctorform.Size = new System.Drawing.Size(631, 69);
-            this.doctorform.TabIndex = 21;
-            // 
-            // cbroot
-            // 
-            this.cbroot.Enabled = false;
-            this.cbroot.FormattingEnabled = true;
-            this.cbroot.Items.AddRange(new object[] {
-            "Doctor AmirhoseinKatani"});
-            this.cbroot.Location = new System.Drawing.Point(489, 29);
-            this.cbroot.Name = "cbroot";
-            this.cbroot.Size = new System.Drawing.Size(121, 24);
-            this.cbroot.TabIndex = 24;
-            // 
-            // cbsu2
-            // 
-            this.cbsu2.Enabled = false;
-            this.cbsu2.FormattingEnabled = true;
-            this.cbsu2.Items.AddRange(new object[] {
-            "Doctor Abarghoiee"});
-            this.cbsu2.Location = new System.Drawing.Point(336, 29);
-            this.cbsu2.Name = "cbsu2";
-            this.cbsu2.Size = new System.Drawing.Size(121, 24);
-            this.cbsu2.TabIndex = 23;
-            // 
-            // cbsu1
-            // 
-            this.cbsu1.Enabled = false;
-            this.cbsu1.FormattingEnabled = true;
-            this.cbsu1.Items.AddRange(new object[] {
-            "Doctor Mah"});
-            this.cbsu1.Location = new System.Drawing.Point(159, 29);
-            this.cbsu1.Name = "cbsu1";
-            this.cbsu1.Size = new System.Drawing.Size(121, 24);
-            this.cbsu1.TabIndex = 22;
-            // 
-            // cbexam
-            // 
-            this.cbexam.FormattingEnabled = true;
-            this.cbexam.Items.AddRange(new object[] {
-            "Doctor taleb"});
-            this.cbexam.Location = new System.Drawing.Point(3, 29);
-            this.cbexam.Name = "cbexam";
-            this.cbexam.Size = new System.Drawing.Size(121, 24);
-            this.cbexam.TabIndex = 21;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(637, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 20);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Date of turn";
-            // 
-            // Form2
+            // rateform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -457,16 +457,16 @@ namespace Ap_Project_Clinic_
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnratings);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "rateform";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.doctorform.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.doctorform.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
