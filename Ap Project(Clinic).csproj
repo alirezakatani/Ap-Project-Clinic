@@ -71,6 +71,13 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="mediacal expenses.cs" />
+    <Compile Include="medical expenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medical expenses.Designer.cs">
+      <DependentUpon>medical expenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="nobatdehi.cs" />
     <Compile Include="Rating Form.cs">
       <SubType>Form</SubType>
@@ -105,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medical expenses.resx">
+      <DependentUpon>medical expenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medical Form.resx">
       <DependentUpon>Medical Form.cs</DependentUpon>

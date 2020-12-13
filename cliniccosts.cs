@@ -12,6 +12,7 @@ namespace Ap_Project_Clinic_
 {
     public partial class cliniccosts : Form
     {
+        string path = Application.StartupPath + "\\cost.txt";
         public double excost { get; set; }
         public double suonecost { get; set; }
         public double sutwocost { get; set; }
@@ -26,6 +27,12 @@ namespace Ap_Project_Clinic_
             suonecost = Convert.ToDouble(txtonesurface.Text);
             sutwocost = Convert.ToDouble(txttwosurface.Text);
             rootcost = Convert.ToDouble(txtroot.Text);
+            
+        }
+        private void saveinfile()
+        {
+            string saves = excost + "*" + suonecost + "*" + sutwocost + "*" + rootcost;
+            System.IO.File.WriteAllText(path, saves);
         }
     }
 }

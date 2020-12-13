@@ -51,7 +51,7 @@ namespace Ap_Project_Clinic_
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(288, 265);
+            this.button1.Location = new System.Drawing.Point(271, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 27);
             this.button1.TabIndex = 1;
@@ -79,9 +79,9 @@ namespace Ap_Project_Clinic_
             this.groupBox1.Controls.Add(this.txtonesurface);
             this.groupBox1.Controls.Add(this.txttwosurface);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 36);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 312);
+            this.groupBox1.Size = new System.Drawing.Size(374, 325);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Costs";
@@ -138,7 +138,7 @@ namespace Ap_Project_Clinic_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 396);
+            this.ClientSize = new System.Drawing.Size(400, 349);
             this.Controls.Add(this.groupBox1);
             this.Name = "cliniccosts";
             this.Text = "cliniccosts";

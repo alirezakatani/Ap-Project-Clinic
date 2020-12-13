@@ -91,7 +91,7 @@ namespace Ap_Project_Clinic_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 513);
+            this.ClientSize = new System.Drawing.Size(386, 491);
             this.Controls.Add(this.btnmedical);
             this.Controls.Add(this.btnClinic);
             this.Controls.Add(this.btnsalary);
