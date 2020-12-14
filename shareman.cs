@@ -16,6 +16,7 @@ namespace Ap_Project_Clinic_
         public shareman(string id)
         {
             string path = rateform.getpath() + @"\shareman.txt";
+          
             string [] allinform1 = System.IO.File.ReadAllLines(path);
             for (int i = 0; i < allinform1.Length; i++)
             {
