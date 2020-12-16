@@ -30,25 +30,27 @@ namespace Ap_Project_Clinic_
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtphone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtturn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtfamilyname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtfilecode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtpayment = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datenow = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.turndate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtdoctor = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -61,13 +63,13 @@ namespace Ap_Project_Clinic_
             this.label1.TabIndex = 0;
             this.label1.Text = "name";
             // 
-            // textBox1
+            // txtname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(161, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Location = new System.Drawing.Point(161, 69);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(149, 27);
+            this.txtname.TabIndex = 1;
             // 
             // button1
             // 
@@ -79,13 +81,13 @@ namespace Ap_Project_Clinic_
             this.button1.Text = "next";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtphone
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(161, 112);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(149, 27);
-            this.textBox4.TabIndex = 8;
+            this.txtphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtphone.Location = new System.Drawing.Point(161, 112);
+            this.txtphone.Name = "txtphone";
+            this.txtphone.Size = new System.Drawing.Size(149, 27);
+            this.txtphone.TabIndex = 8;
             // 
             // label4
             // 
@@ -97,13 +99,13 @@ namespace Ap_Project_Clinic_
             this.label4.TabIndex = 7;
             this.label4.Text = "phone";
             // 
-            // textBox2
+            // txtturn
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(486, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 27);
-            this.textBox2.TabIndex = 10;
+            this.txtturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtturn.Location = new System.Drawing.Point(486, 108);
+            this.txtturn.Name = "txtturn";
+            this.txtturn.Size = new System.Drawing.Size(149, 27);
+            this.txtturn.TabIndex = 10;
             // 
             // label2
             // 
@@ -115,13 +117,13 @@ namespace Ap_Project_Clinic_
             this.label2.TabIndex = 9;
             this.label2.Text = "turn";
             // 
-            // textBox3
+            // txtfamilyname
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(486, 66);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 27);
-            this.textBox3.TabIndex = 12;
+            this.txtfamilyname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfamilyname.Location = new System.Drawing.Point(486, 66);
+            this.txtfamilyname.Name = "txtfamilyname";
+            this.txtfamilyname.Size = new System.Drawing.Size(149, 27);
+            this.txtfamilyname.TabIndex = 12;
             // 
             // label3
             // 
@@ -133,13 +135,13 @@ namespace Ap_Project_Clinic_
             this.label3.TabIndex = 11;
             this.label3.Text = "family name";
             // 
-            // textBox5
+            // txtfilecode
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(161, 158);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(149, 27);
-            this.textBox5.TabIndex = 14;
+            this.txtfilecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfilecode.Location = new System.Drawing.Point(161, 158);
+            this.txtfilecode.Name = "txtfilecode";
+            this.txtfilecode.Size = new System.Drawing.Size(149, 27);
+            this.txtfilecode.TabIndex = 14;
             // 
             // label5
             // 
@@ -160,19 +162,19 @@ namespace Ap_Project_Clinic_
             this.button2.Text = "Pay";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // txtpayment
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(324, 210);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(149, 27);
-            this.textBox6.TabIndex = 17;
+            this.txtpayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpayment.Location = new System.Drawing.Point(269, 214);
+            this.txtpayment.Name = "txtpayment";
+            this.txtpayment.Size = new System.Drawing.Size(149, 27);
+            this.txtpayment.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(200, 217);
+            this.label6.Location = new System.Drawing.Point(173, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 16;
@@ -198,12 +200,12 @@ namespace Ap_Project_Clinic_
             this.button4.Text = "get new turn";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // datenow
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 22);
-            this.dateTimePicker1.TabIndex = 20;
+            this.datenow.Location = new System.Drawing.Point(161, 32);
+            this.datenow.Name = "datenow";
+            this.datenow.Size = new System.Drawing.Size(175, 22);
+            this.datenow.TabIndex = 20;
             // 
             // label7
             // 
@@ -215,47 +217,67 @@ namespace Ap_Project_Clinic_
             this.label7.TabIndex = 21;
             this.label7.Text = "time now";
             // 
-            // dateTimePicker2
+            // turndate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(486, 161);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(175, 22);
-            this.dateTimePicker2.TabIndex = 22;
+            this.turndate.Location = new System.Drawing.Point(486, 34);
+            this.turndate.Name = "turndate";
+            this.turndate.Size = new System.Drawing.Size(175, 22);
+            this.turndate.TabIndex = 22;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(362, 161);
+            this.label8.Location = new System.Drawing.Point(362, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "date of turn";
+            // 
+            // txtdoctor
+            // 
+            this.txtdoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdoctor.Location = new System.Drawing.Point(486, 156);
+            this.txtdoctor.Name = "txtdoctor";
+            this.txtdoctor.Size = new System.Drawing.Size(149, 27);
+            this.txtdoctor.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(362, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "doctor";
             // 
             // turns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 398);
+            this.Controls.Add(this.txtdoctor);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.turndate);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.datenow);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtpayment);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtfilecode);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtfamilyname);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtturn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtphone);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtname);
             this.Controls.Add(this.label1);
             this.Name = "turns";
             this.Text = "turns";
@@ -268,24 +290,26 @@ namespace Ap_Project_Clinic_
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtphone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtturn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtfamilyname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtfilecode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtpayment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datenow;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker turndate;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtdoctor;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -42,7 +42,7 @@ namespace Ap_Project_Clinic_
             for (int i = 0; emp[i]!=null; i++)
             {
                 cost = emp[i].Split('*');
-                allsalary += Convert.ToDouble(cost[1]);
+                allsalary += Convert.ToDouble(cost[2]);
             }
             return allsalary;
         }
@@ -64,6 +64,25 @@ namespace Ap_Project_Clinic_
                 System.IO.File.AppendAllText(pathsaveaccount, account);
             }
 
+        }
+        public static string getspecialsalary(string name,string work)
+        {
+          
+            string pat = rateform.getpath() + "\\eminfo.txt";
+            string[] emp = System.IO.File.ReadAllLines(pat);
+            string[] cost ;
+            for (int i = 0; emp[i] != null; i++)
+            {
+                cost = emp[i].Split('*');
+                if(name==cost[0]&&work==cost[3])
+                {
+                    return cost[2];
+                }
+                
+               
+            }
+            return null;
+            
         }
 
     }

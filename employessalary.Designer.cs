@@ -38,11 +38,11 @@ namespace Ap_Project_Clinic_
             this.label5 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtjob = new System.Windows.Forms.TextBox();
+            this.save = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtsalary = new System.Windows.Forms.TextBox();
-            this.save = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtjob = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,21 +133,15 @@ namespace Ap_Project_Clinic_
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "employes information";
             // 
-            // label3
+            // save
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 214);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 20);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Job";
-            // 
-            // txtjob
-            // 
-            this.txtjob.Location = new System.Drawing.Point(178, 207);
-            this.txtjob.Name = "txtjob";
-            this.txtjob.Size = new System.Drawing.Size(139, 27);
-            this.txtjob.TabIndex = 31;
+            this.save.Location = new System.Drawing.Point(261, 362);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(95, 43);
+            this.save.TabIndex = 31;
+            this.save.Text = "Save";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // label4
             // 
@@ -165,15 +159,22 @@ namespace Ap_Project_Clinic_
             this.txtsalary.Size = new System.Drawing.Size(139, 27);
             this.txtsalary.TabIndex = 33;
             // 
-            // save
+            // label3
             // 
-            this.save.Location = new System.Drawing.Point(261, 362);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(95, 43);
-            this.save.TabIndex = 31;
-            this.save.Text = "Save";
-            this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label3.Location = new System.Drawing.Point(25, 214);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 17);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Job(doctor,other)";
+            // 
+            // txtjob
+            // 
+            this.txtjob.Location = new System.Drawing.Point(178, 207);
+            this.txtjob.Name = "txtjob";
+            this.txtjob.Size = new System.Drawing.Size(139, 27);
+            this.txtjob.TabIndex = 31;
             // 
             // employessalary
             // 

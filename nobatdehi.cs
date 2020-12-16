@@ -5,19 +5,32 @@ namespace Ap_Project_Clinic_
 {
     class nobatdehi
     {
-        string work;
-        string name;
-        string familyname;
-        string idnumber;
-        string phone;
-        DateTime date;
-        string path;
-        int minute;
-        string fileid;
-        string doctorname;
-        Boolean noteven;
-        Boolean notodd;
-        static int shomarenobat = 0;
+        //string work;
+        //string name;
+        //string familyname;
+        //string idnumber;
+        //string phone;
+        //DateTime date;
+        //string path;
+        //int minute;
+        //string fileid;
+        //string doctorname;
+        //Boolean noteven;
+        //Boolean notodd;
+        public string name { get; set; }
+        public string familyname { get; set; }
+        public string phone { get; set; }
+        public DateTime date { get; set; }
+        public string work { get; set; }
+        public string path { get; set; }
+        public int minute { get; set; }
+        public string idnumber { get; set; }
+        public string fileid { get; set; }
+        public string doctorname { get; set; }
+        public Boolean noteven { get; set; }
+        public Boolean notodd { get; set; }
+        public int shomarenobat { get; set; }
+
         int minutemoayene = 10;
         int minutedarmansathi1 = 20;
         int minutedarmansathi2 = 30;
@@ -48,6 +61,17 @@ namespace Ap_Project_Clinic_
             this.work = work;
             setminute();
             shomarenobat++;
+        }
+        public nobatdehi(DateTime date)//for Receiving turns
+        {
+            Boolean x=getfromdate(date);
+            if(x==false)
+            {
+                
+                return ;
+            }
+            
+
         }
         public void writeinfile(DateTime time)
         {
@@ -121,7 +145,7 @@ namespace Ap_Project_Clinic_
                 return new DateTime(1, 1, 1, 1, 1, 1);//like flag
 
 
-            return new DateTime(1, 1, 1, 1, 1, 1);
+            //return new DateTime(1, 1, 1, 1, 1, 1);
 
         }
         public void setminute()
@@ -204,11 +228,38 @@ namespace Ap_Project_Clinic_
                     this.familyname = personinform[5];
                     this.idnumber = personinform[6];
                     this.idnumber = personinform[7];
+                    this.shomarenobat = Convert.ToInt32(personinform[8]);
                     return 1;
                 }
 
             }
             return 0;
+        }
+        public bool getfromdate(DateTime date)
+        {
+            string[] allinform1 = System.IO.File.ReadAllLines(path + "\\nobat.txt");
+            for (int i = 0; i < allinform1.Length; i++)
+            {
+                string[] personinform = allinform1[i].Split('*');
+                string[] dateofturn = personinform[0].Split('/');
+                string [] timeofturn = personinform[1].Split(':');
+                DateTime x = new DateTime(Convert.ToInt32(dateofturn[0]), Convert.ToInt32(dateofturn[1]), Convert.ToInt32(dateofturn[2]), Convert.ToInt32(timeofturn[0]), Convert.ToInt32(timeofturn[1]), Convert.ToInt32(timeofturn[2]));
+                if (x==date)
+                {
+                    this.minute = Convert.ToInt32(personinform[2]);
+                    this.work = personinform[3];
+                    this.name = personinform[4];
+                    this.familyname = personinform[5];
+                    this.idnumber = personinform[6];
+                    this.idnumber = personinform[7];
+                    this.fileid=personinform[8];
+                    this.date = date;
+                    return true;
+
+                }
+
+            }
+            return false;
         }
 
 
