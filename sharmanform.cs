@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Ap_Project_Clinic_
 {
-    public partial class Form3 : Form
+    public partial class sharmanform : Form
     {
         string path = Application.StartupPath + @"\shareman.txt";
-        public Form3()
+        public sharmanform()
         {
             InitializeComponent();
         }

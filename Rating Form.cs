@@ -109,5 +109,10 @@ namespace Ap_Project_Clinic_
         {
             return Application.StartupPath;
         }
+        //public void getnewturn(nobatdehi nobats)
+        //{
+
+
+        //}
     }
 }

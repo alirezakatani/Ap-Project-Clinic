@@ -65,11 +65,17 @@
     <Compile Include="Financial.Designer.cs">
       <DependentUpon>Financial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="turns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="turns.Designer.cs">
+      <DependentUpon>turns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sharmanform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sharmanform.Designer.cs">
+      <DependentUpon>sharmanform.cs</DependentUpon>
     </Compile>
     <Compile Include="mediacal expenses.cs" />
     <Compile Include="medical expenses.cs">
@@ -79,6 +85,12 @@
       <DependentUpon>medical expenses.cs</DependentUpon>
     </Compile>
     <Compile Include="nobatdehi.cs" />
+    <Compile Include="paymentform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paymentform.Designer.cs">
+      <DependentUpon>paymentform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rating Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,14 +122,20 @@
     <EmbeddedResource Include="Financial.resx">
       <DependentUpon>Financial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="turns.resx">
+      <DependentUpon>turns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sharmanform.resx">
+      <DependentUpon>sharmanform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="medical expenses.resx">
       <DependentUpon>medical expenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medical Form.resx">
       <DependentUpon>Medical Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paymentform.resx">
+      <DependentUpon>paymentform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rating Form.resx">
       <DependentUpon>Rating Form.cs</DependentUpon>

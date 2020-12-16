@@ -1,7 +1,7 @@
 ﻿
 namespace Ap_Project_Clinic_
 {
-    partial class Form3
+    partial class sharmanform
     {
         /// <summary>
         /// Required designer variable.

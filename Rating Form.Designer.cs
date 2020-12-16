@@ -64,6 +64,7 @@ namespace Ap_Project_Clinic_
             this.chkodd = new System.Windows.Forms.RadioButton();
             this.chkeven = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.doctorform.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -438,18 +439,29 @@ namespace Ap_Project_Clinic_
             this.groupBox3.Controls.Add(this.chkrestrictions);
             this.groupBox3.Controls.Add(this.chkeven);
             this.groupBox3.Controls.Add(this.chkodd);
-            this.groupBox3.Location = new System.Drawing.Point(28, 492);
+            this.groupBox3.Location = new System.Drawing.Point(28, 475);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(501, 69);
+            this.groupBox3.Size = new System.Drawing.Size(501, 58);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Have Problem";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(394, 551);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 46);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "return to turns page";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // rateform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 609);
+            this.ClientSize = new System.Drawing.Size(1032, 607);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
@@ -509,5 +521,6 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.ComboBox cbsu2;
         private System.Windows.Forms.ComboBox cbsu1;
         private System.Windows.Forms.ComboBox cbexam;
+        private System.Windows.Forms.Button button1;
     }
 }

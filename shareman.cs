@@ -33,6 +33,10 @@ namespace Ap_Project_Clinic_
                     
             } 
         }
+        public void checkout(double allprofit)//needs to complete
+        {
+
+        }
 
     }
 }
