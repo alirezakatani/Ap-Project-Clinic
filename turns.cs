@@ -57,5 +57,14 @@ namespace Ap_Project_Clinic_
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string saveincomefile = Application.StartupPath + "\\income.txt";
+            string cost =txtdoctor.Text+"*"+txtpayment.Text;
+            System.IO.File.AppendAllText(saveincomefile, cost);
+        }
+        
+
     }
 }

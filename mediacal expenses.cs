@@ -7,7 +7,7 @@ namespace Ap_Project_Clinic_
 
     class mediacal_expenses
     {
-        string paths = "\\medicalexpnses.txt";
+        string paths =rateform.getpath()+ "\\medicalexpnses.txt";
         public void getallcost()
         {
             string[] cost = System.IO.File.ReadAllLines(paths);
@@ -16,8 +16,9 @@ namespace Ap_Project_Clinic_
         {
             System.IO.File.WriteAllText(paths, String.Empty);
         }
-        public double getallexpences()
+        public static double getallexpences()
         {
+            string paths = rateform.getpath()+ "\\medicalexpnses.txt";
             string[] expen = System.IO.File.ReadAllLines(paths);
             string[] cost;
             double costs = 0;

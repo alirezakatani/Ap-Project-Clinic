@@ -22,7 +22,7 @@ namespace Ap_Project_Clinic_
             string account;
             string pathsaveaccount = rateform.getpath() + "\\account.txt";
             string information = txtname.Text +'*'+ txtfamilyname.Text+'*' + txtsalpercent.Text +'*'+ txtsharepercent.Text +'*'+ txtid.Text +'*'+txtaccount.Text+"\n";
-            account = txtname.Text + '*' + txtfamilyname.Text + '*' + 0 + '*' + DateTime.Now;
+            account = txtname.Text + '*' + txtfamilyname.Text +'*'+txtaccount.Text+ '*' + 0 + '*' + DateTime.Now+'*'+"shareman";
             System.IO.File.AppendAllText(path, information);
             System.IO.File.AppendAllText(pathsaveaccount, account);
             

@@ -65,6 +65,7 @@
     <Compile Include="Financial.Designer.cs">
       <DependentUpon>Financial.cs</DependentUpon>
     </Compile>
+    <Compile Include="finantial.cs" />
     <Compile Include="turns.cs">
       <SubType>Form</SubType>
     </Compile>
