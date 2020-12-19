@@ -5,10 +5,13 @@ namespace Ap_Project_Clinic_
 
     public static class finantial
     {
-       static double allincome;
-       static double allsalary;
-       static double allprofit;
-       static double allmedcalex;
+       
+       
+       
+        public static double allincome{ get; set; }
+        public static double allsalary{ get; set; }
+        public static double allprofit { get; set; }
+        public static double allmedcalex { get; set; }
         public static double getallincome()
         {
             allincome = 0;
@@ -46,6 +49,11 @@ namespace Ap_Project_Clinic_
             
 
 
+        }
+        public static void set()
+        {
+            getallincome();
+            finalcheckout();
         }
         
     }

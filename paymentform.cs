@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ap_Project_Clinic_
@@ -15,6 +8,17 @@ namespace Ap_Project_Clinic_
         public paymentform()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            finantial.set();
+            txtallincome.Text = finantial.getallincome().ToString();
+            txtempsalary.Text = Convert.ToString(finantial.allsalary);
+            txtmedicalex.Text = Convert.ToString(finantial.allmedcalex);
+            txtallcheck.Text = "emplyes:\n" + employes.checkout() + "shareman:\n" + shareman.checkout();
+
+
         }
     }
 }

@@ -62,22 +62,23 @@ namespace Ap_Project_Clinic_
             setminute();
             shomarenobat++;
         }
+     
         public nobatdehi(DateTime date)//for Receiving turns
         {
-            Boolean x=getfromdate(date);
-            if(x==false)
+            Boolean x = getfromdate(date);
+            if (x == false)
             {
-                
-                return ;
+
+                return;
             }
-            
+
 
         }
         public void writeinfile(DateTime time)
         {
 
             this.date = time;
-            string save = date.Year + "/" + date.Month + "/" + date.Day + "/" + '*' + date.TimeOfDay.ToString() + '*' + minute + '*' + work + '*' + name + '*' + familyname + '*' + idnumber + '*' + phone + '*' + shomarenobat + '\n';
+            string save = date.Year + "/" + date.Month + "/" + date.Day + "/" + '*' + date.TimeOfDay.ToString() + '*' + minute + '*' + work + '*' + name + '*' + familyname + '*' + idnumber + '*' + phone + '*' + shomarenobat + '*' + noteven + '*' + notodd + '*' + doctorname + '\n';
             System.IO.File.AppendAllText(path + "\\nobat.txt", save);
 
 
@@ -177,14 +178,14 @@ namespace Ap_Project_Clinic_
                 DateTime day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
                 if (noteven == true)
                 {
-                    if (Convert.ToInt32(stime[2]) >= date.Day&&day.DayOfWeek!=DayOfWeek.Monday&& day.DayOfWeek != DayOfWeek.Saturday&& day.DayOfWeek != DayOfWeek.Wednesday && day.DayOfWeek != DayOfWeek.Friday)
+                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Monday && day.DayOfWeek != DayOfWeek.Saturday && day.DayOfWeek != DayOfWeek.Wednesday && day.DayOfWeek != DayOfWeek.Friday)
                     {
                         timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
                     }
                 }
                 else
                 {
-                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Tuesday && day.DayOfWeek != DayOfWeek.Thursday&& day.DayOfWeek != DayOfWeek.Friday)
+                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Tuesday && day.DayOfWeek != DayOfWeek.Thursday && day.DayOfWeek != DayOfWeek.Friday)
                     {
                         timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
                     }
@@ -227,7 +228,7 @@ namespace Ap_Project_Clinic_
                     this.name = personinform[4];
                     this.familyname = personinform[5];
                     this.idnumber = personinform[6];
-                    this.idnumber = personinform[7];
+                    this.phone = personinform[7];
                     this.shomarenobat = Convert.ToInt32(personinform[8]);
                     return 1;
                 }
@@ -242,9 +243,9 @@ namespace Ap_Project_Clinic_
             {
                 string[] personinform = allinform1[i].Split('*');
                 string[] dateofturn = personinform[0].Split('/');
-                string [] timeofturn = personinform[1].Split(':');
+                string[] timeofturn = personinform[1].Split(':');
                 DateTime x = new DateTime(Convert.ToInt32(dateofturn[0]), Convert.ToInt32(dateofturn[1]), Convert.ToInt32(dateofturn[2]), Convert.ToInt32(timeofturn[0]), Convert.ToInt32(timeofturn[1]), Convert.ToInt32(timeofturn[2]));
-                if (x==date)
+                if (x == date)
                 {
                     this.minute = Convert.ToInt32(personinform[2]);
                     this.work = personinform[3];
@@ -252,7 +253,7 @@ namespace Ap_Project_Clinic_
                     this.familyname = personinform[5];
                     this.idnumber = personinform[6];
                     this.idnumber = personinform[7];
-                    this.fileid=personinform[8];
+                    this.fileid = personinform[8];
                     this.date = date;
                     return true;
 
@@ -261,8 +262,6 @@ namespace Ap_Project_Clinic_
             }
             return false;
         }
-
-
     }
 }
 
