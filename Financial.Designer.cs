@@ -55,6 +55,7 @@ namespace Ap_Project_Clinic_
             this.btnEquity.TabIndex = 1;
             this.btnEquity.Text = "Equity affairs";
             this.btnEquity.UseVisualStyleBackColor = true;
+            this.btnEquity.Click += new System.EventHandler(this.btnEquity_Click);
             // 
             // btnsalary
             // 
@@ -76,6 +77,7 @@ namespace Ap_Project_Clinic_
             this.btnClinic.TabIndex = 5;
             this.btnClinic.Text = "Clinic costs";
             this.btnClinic.UseVisualStyleBackColor = true;
+            this.btnClinic.Click += new System.EventHandler(this.btnClinic_Click);
             // 
             // btnmedical
             // 
@@ -86,6 +88,7 @@ namespace Ap_Project_Clinic_
             this.btnmedical.TabIndex = 6;
             this.btnmedical.Text = "medical expenses";
             this.btnmedical.UseVisualStyleBackColor = true;
+            this.btnmedical.Click += new System.EventHandler(this.btnmedical_Click);
             // 
             // FinancialForm
             // 
@@ -98,6 +101,7 @@ namespace Ap_Project_Clinic_
             this.Controls.Add(this.btnEquity);
             this.Controls.Add(this.label1);
             this.Name = "FinancialForm";
+            this.ShowInTaskbar = false;
             this.Text = "Financial";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -33,8 +33,8 @@ namespace Ap_Project_Clinic_
             this.txtfileid = new System.Windows.Forms.TextBox();
             this.fileid = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateturn = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateturn = new System.Windows.Forms.DateTimePicker();
             this.txtresult = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -49,6 +49,7 @@ namespace Ap_Project_Clinic_
             this.button1.TabIndex = 0;
             this.button1.Text = "delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtfileid
             // 
@@ -57,7 +58,6 @@ namespace Ap_Project_Clinic_
             this.txtfileid.Name = "txtfileid";
             this.txtfileid.Size = new System.Drawing.Size(200, 27);
             this.txtfileid.TabIndex = 1;
-            this.txtfileid.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // fileid
             // 
@@ -83,13 +83,6 @@ namespace Ap_Project_Clinic_
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // dateturn
-            // 
-            this.dateturn.Location = new System.Drawing.Point(411, 46);
-            this.dateturn.Name = "dateturn";
-            this.dateturn.Size = new System.Drawing.Size(200, 27);
-            this.dateturn.TabIndex = 4;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -99,6 +92,13 @@ namespace Ap_Project_Clinic_
             this.label1.Size = new System.Drawing.Size(41, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "date";
+            // 
+            // dateturn
+            // 
+            this.dateturn.Location = new System.Drawing.Point(411, 46);
+            this.dateturn.Name = "dateturn";
+            this.dateturn.Size = new System.Drawing.Size(200, 27);
+            this.dateturn.TabIndex = 4;
             // 
             // txtresult
             // 

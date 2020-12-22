@@ -27,6 +27,7 @@ namespace Ap_Project_Clinic_
             suonecost = Convert.ToDouble(txtonesurface.Text);
             sutwocost = Convert.ToDouble(txttwosurface.Text);
             rootcost = Convert.ToDouble(txtroot.Text);
+            saveinfile();
             
         }
         private void saveinfile()

@@ -51,6 +51,7 @@ namespace Ap_Project_Clinic_
             this.label8 = new System.Windows.Forms.Label();
             this.txtdoctor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +81,7 @@ namespace Ap_Project_Clinic_
             this.button1.TabIndex = 2;
             this.button1.Text = "next";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtphone
             // 
@@ -190,6 +192,7 @@ namespace Ap_Project_Clinic_
             this.button3.TabIndex = 18;
             this.button3.Text = "prev";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -253,11 +256,23 @@ namespace Ap_Project_Clinic_
             this.label9.TabIndex = 24;
             this.label9.Text = "doctor";
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(161, 319);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 36);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "get turn";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // turns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 398);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.txtdoctor);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -312,5 +327,6 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtdoctor;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button5;
     }
 }

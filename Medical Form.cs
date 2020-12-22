@@ -10,11 +10,30 @@ using System.Windows.Forms;
 
 namespace Ap_Project_Clinic_
 {
-    public partial class Form1 : Form
+    public partial class medicalform : Form
     {
-        public Form1()
+        public medicalform()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            turns tuform = new turns();
+            tuform.Show(this);
+        }
+
+        private void btnrating_Click(object sender, EventArgs e)
+        {
+            rateform rateforming = new rateform();
+            rateforming.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            deleteturnform detuform = new deleteturnform();
+            detuform.Show(this);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Ap_Project_Clinic_
 {
-    partial class Form1
+    partial class medicalform
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,8 @@ namespace Ap_Project_Clinic_
         {
             this.btnrating = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnrating
@@ -42,6 +44,7 @@ namespace Ap_Project_Clinic_
             this.btnrating.TabIndex = 8;
             this.btnrating.Text = "Turn ratings";
             this.btnrating.UseVisualStyleBackColor = true;
+            this.btnrating.Click += new System.EventHandler(this.btnrating_Click);
             // 
             // label1
             // 
@@ -53,15 +56,39 @@ namespace Ap_Project_Clinic_
             this.label1.TabIndex = 7;
             this.label1.Text = "Medical Section";
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(105, 218);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 46);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Turns";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button2.Location = new System.Drawing.Point(105, 284);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 46);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Delete Turn";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // medicalform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 518);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnrating);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "medicalform";
+            this.Text = "medicalform";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,5 +98,7 @@ namespace Ap_Project_Clinic_
 
         private System.Windows.Forms.Button btnrating;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

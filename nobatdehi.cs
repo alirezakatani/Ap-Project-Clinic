@@ -37,6 +37,7 @@ namespace Ap_Project_Clinic_
         int minutedarmanreshe = 40;
         public nobatdehi(string name, string familyname, string idnumber, string work, string phone, DateTime date, string fileid, string doctornames, Boolean ev, Boolean od)
         {
+            path = rateform.getpath();
             this.work = work;
             this.name = name;
             this.doctorname = doctornames;
@@ -48,10 +49,13 @@ namespace Ap_Project_Clinic_
             setminute();
             shomarenobat++;
             this.date = date;
-            this.fileid = fileid;
+            this.fileid = idnumber;
+
         }
         public nobatdehi(DateTime date, string fileid, string work, string doctornames, Boolean ev, Boolean od)
         {
+            this.idnumber = fileid;
+            path = rateform.getpath();
             this.date = date;
             this.fileid = fileid;
             this.doctorname = doctornames;
@@ -63,14 +67,35 @@ namespace Ap_Project_Clinic_
             shomarenobat++;
         }
      
-        public nobatdehi(DateTime date)//for Receiving turns
+        public static List<nobatdehi> getalltoday(DateTime date)//for Receiving turns
         {
-            Boolean x = getfromdate(date);
-            if (x == false)
+           string path = rateform.getpath();
+            List<nobatdehi> todayturn = new List<nobatdehi>();
+            string[] allinform1 = System.IO.File.ReadAllLines(rateform.getpath() + "\\nobat.txt");
+            for (int i = 0; i < allinform1.Length; i++)
             {
+                string[] personinform = allinform1[i].Split('*');
+                string[] dateofturn = personinform[0].Split('/');
+                string[] timeofturn = personinform[1].Split(':');
+                DateTime x = new DateTime(Convert.ToInt32(dateofturn[0]), Convert.ToInt32(dateofturn[1]), Convert.ToInt32(dateofturn[2]), 15, 0, 0);//nobathay har saat
+                if (x.Year == date.Year && x.Month == date.Month && x.Day == date.Day)
+                {
+                    //this.minute = Convert.ToInt32(personinform[2]);
+                    //this.work = personinform[3];
+                    //this.name = personinform[4];
+                    //this.familyname = personinform[5];
+                    //this.idnumber = personinform[6];
+                    //this.idnumber = personinform[7];
+                    //this.fileid = personinform[8];
+                    //this.date = date;
+                    //return true;
+                    nobatdehi no = new nobatdehi(date, personinform[8], personinform[3], personinform[11], Convert.ToBoolean(personinform[9]), Convert.ToBoolean(personinform[10]));
+                    todayturn.Add(no);
+                }
 
-                return;
             }
+            return todayturn;
+            
 
 
         }
@@ -110,6 +135,10 @@ namespace Ap_Project_Clinic_
             //    return x;
 
             //}  
+            if(!System.IO.File.Exists(path + "\\nobat.txt"))
+            {
+                System.IO.File.Create(path + "\\nobat.txt");
+            }
             string[] nobats = System.IO.File.ReadAllLines(path + "\\nobat.txt");
             string[] nob;
             int k = 0;
@@ -119,7 +148,7 @@ namespace Ap_Project_Clinic_
                 string[] stime = nob[0].Split('/');
                 string[] ttime = nob[1].Split(':');
                 DateTime day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
-                if (Convert.ToInt32(stime[0]) == date.Year && Convert.ToInt32(stime[1]) == date.Month && Convert.ToInt32(stime[2]) == date.Day && day.DayOfWeek != DayOfWeek.Friday)
+                if (Convert.ToInt32(stime[0]) == date.Year && Convert.ToInt32(stime[1]) == date.Month && Convert.ToInt32(stime[2]) == date.Day && day.DayOfWeek != DayOfWeek.Friday&&nob[11]==doctorname)
                 {
                     timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
                 }
@@ -129,8 +158,22 @@ namespace Ap_Project_Clinic_
             {
                 timenoabt.Add(new DateTime(date.Year, date.Month, date.Day, 15, 0, 0));
                 writeinfile(new DateTime(date.Year, date.Month, date.Day, 15, 0, 0));
+                return new DateTime(date.Year, date.Month, date.Day, 15, 0, 0);
             }
             timenoabt.Sort();
+            for (int i = 0; i < timenoabt.Count-2; i++)
+            {
+                DateTime s1 = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, timenoabt[i].Hour, timenoabt[i].Minute, 0);
+                DateTime s2 = new DateTime(timenoabt[i+1].Year, timenoabt[i+1].Month, timenoabt[i+1].Day, timenoabt[i+1].Hour, timenoabt[i+1].Minute, 0);
+                TimeSpan s3 = s2 - s1;
+                if (s3.TotalMinutes > minute && s3.TotalMinutes > 0)
+                {
+                    s1 = s1.AddMinutes(minute);
+                    writeinfile(s1);
+                    return s1;
+                }
+
+            }
 
             DateTime zs = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day, timenoabt[timenoabt.Count - 1].Hour, timenoabt[timenoabt.Count - 1].Minute, 0);
             DateTime xs = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day, 20, 0, 0);
@@ -178,14 +221,14 @@ namespace Ap_Project_Clinic_
                 DateTime day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
                 if (noteven == true)
                 {
-                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Monday && day.DayOfWeek != DayOfWeek.Saturday && day.DayOfWeek != DayOfWeek.Wednesday && day.DayOfWeek != DayOfWeek.Friday)
+                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Monday && day.DayOfWeek != DayOfWeek.Saturday && day.DayOfWeek != DayOfWeek.Wednesday && day.DayOfWeek != DayOfWeek.Friday && nob[11] == doctorname)
                     {
                         timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
                     }
                 }
                 else
                 {
-                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Tuesday && day.DayOfWeek != DayOfWeek.Thursday && day.DayOfWeek != DayOfWeek.Friday)
+                    if (Convert.ToInt32(stime[2]) >= date.Day && day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Tuesday && day.DayOfWeek != DayOfWeek.Thursday && day.DayOfWeek != DayOfWeek.Friday && nob[11] == doctorname)
                     {
                         timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
                     }
@@ -223,7 +266,7 @@ namespace Ap_Project_Clinic_
             for (int i = 0; i < allinform1.Length; i++)
             {
                 string[] personinform = allinform1[i].Split('*');
-                if (personinform[8] == fileid)
+                if (personinform[6] == fileid)
                 {
                     this.name = personinform[4];
                     this.familyname = personinform[5];
@@ -236,32 +279,8 @@ namespace Ap_Project_Clinic_
             }
             return 0;
         }
-        public bool getfromdate(DateTime date)
-        {
-            string[] allinform1 = System.IO.File.ReadAllLines(path + "\\nobat.txt");
-            for (int i = 0; i < allinform1.Length; i++)
-            {
-                string[] personinform = allinform1[i].Split('*');
-                string[] dateofturn = personinform[0].Split('/');
-                string[] timeofturn = personinform[1].Split(':');
-                DateTime x = new DateTime(Convert.ToInt32(dateofturn[0]), Convert.ToInt32(dateofturn[1]), Convert.ToInt32(dateofturn[2]), Convert.ToInt32(timeofturn[0]), Convert.ToInt32(timeofturn[1]), Convert.ToInt32(timeofturn[2]));
-                if (x == date)
-                {
-                    this.minute = Convert.ToInt32(personinform[2]);
-                    this.work = personinform[3];
-                    this.name = personinform[4];
-                    this.familyname = personinform[5];
-                    this.idnumber = personinform[6];
-                    this.idnumber = personinform[7];
-                    this.fileid = personinform[8];
-                    this.date = date;
-                    return true;
-
-                }
-
-            }
-            return false;
-        }
+      
+        
     }
 }
 

@@ -44,6 +44,7 @@ namespace Ap_Project_Clinic_
             this.btnFinancial.TabIndex = 0;
             this.btnFinancial.Text = "Financial";
             this.btnFinancial.UseVisualStyleBackColor = true;
+            this.btnFinancial.Click += new System.EventHandler(this.btnFinancial_Click);
             // 
             // btnMedical
             // 
@@ -54,6 +55,7 @@ namespace Ap_Project_Clinic_
             this.btnMedical.TabIndex = 1;
             this.btnMedical.Text = "Medical Affairs";
             this.btnMedical.UseVisualStyleBackColor = true;
+            this.btnMedical.Click += new System.EventHandler(this.btnMedical_Click);
             // 
             // label1
             // 

@@ -19,7 +19,27 @@ namespace Ap_Project_Clinic_
 
         private void btnsalary_Click(object sender, EventArgs e)
         {
+            employessalary empform = new employessalary();
+            empform.Show(this);
 
+        }
+
+        private void btnEquity_Click(object sender, EventArgs e)
+        {
+            sharmanform shform = new sharmanform();
+            shform.Show(this);
+        }
+
+        private void btnmedical_Click(object sender, EventArgs e)
+        {
+            medicalexpform me = new medicalexpform();
+            me.Show(this);
+        }
+
+        private void btnClinic_Click(object sender, EventArgs e)
+        {
+            cliniccosts clicosform = new cliniccosts();
+            clicosform.Show(this);
         }
     }
 }

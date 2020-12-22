@@ -21,5 +21,19 @@ namespace Ap_Project_Clinic_
         {
 
         }
+
+        private void btnFinancial_Click(object sender, EventArgs e)
+        {
+            FinancialForm x = new FinancialForm();
+            x.Show(this);
+            
+
+        }
+
+        private void btnMedical_Click(object sender, EventArgs e)
+        {
+            medicalform medi = new medicalform();
+            medi.Show(this);
+        }
     }
 }

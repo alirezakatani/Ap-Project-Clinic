@@ -17,9 +17,8 @@ namespace Ap_Project_Clinic_
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            Boolean x= deleteturn.deleteturnfun(dateturn.Value, txtfileid.Text);
+        private void button1_Click(object sender, EventArgs e)
+        {  Boolean x= deleteturn.deleteturnfun(dateturn.Value, txtfileid.Text);
             if(x==true)
             {
                 txtresult.Text = "succsesful";

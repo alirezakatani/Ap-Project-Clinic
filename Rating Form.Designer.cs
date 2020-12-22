@@ -43,7 +43,7 @@ namespace Ap_Project_Clinic_
             this.rb1serface = new System.Windows.Forms.RadioButton();
             this.rbsurface2 = new System.Windows.Forms.RadioButton();
             this.rbExamination = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtpatientid = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
@@ -59,27 +59,32 @@ namespace Ap_Project_Clinic_
             this.txtresult = new System.Windows.Forms.TextBox();
             this.chkrestrictions = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.infopanel = new System.Windows.Forms.Panel();
+            this.chknewpatient = new System.Windows.Forms.RadioButton();
             this.chkhaveid = new System.Windows.Forms.RadioButton();
             this.chkodd = new System.Windows.Forms.RadioButton();
             this.chkeven = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtfrom = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.doctorform.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.infopanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnratings
             // 
             this.btnratings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnratings.Location = new System.Drawing.Point(553, 551);
+            this.btnratings.Location = new System.Drawing.Point(184, 556);
             this.btnratings.Name = "btnratings";
             this.btnratings.Size = new System.Drawing.Size(153, 46);
             this.btnratings.TabIndex = 3;
             this.btnratings.Text = "Turn ratings";
             this.btnratings.UseVisualStyleBackColor = true;
+            this.btnratings.Click += new System.EventHandler(this.btnratings_Click);
             // 
             // label1
             // 
@@ -190,6 +195,7 @@ namespace Ap_Project_Clinic_
             this.rbroot.TabStop = true;
             this.rbroot.Text = "Root canal treatment";
             this.rbroot.UseVisualStyleBackColor = true;
+            this.rbroot.CheckedChanged += new System.EventHandler(this.rbroot_CheckedChanged);
             // 
             // rb1serface
             // 
@@ -201,6 +207,7 @@ namespace Ap_Project_Clinic_
             this.rb1serface.TabStop = true;
             this.rb1serface.Text = "One surface repair";
             this.rb1serface.UseVisualStyleBackColor = true;
+            this.rb1serface.CheckedChanged += new System.EventHandler(this.rb1serface_CheckedChanged);
             // 
             // rbsurface2
             // 
@@ -212,6 +219,7 @@ namespace Ap_Project_Clinic_
             this.rbsurface2.TabStop = true;
             this.rbsurface2.Text = "Two-level restoration";
             this.rbsurface2.UseVisualStyleBackColor = true;
+            this.rbsurface2.CheckedChanged += new System.EventHandler(this.rbsurface2_CheckedChanged);
             // 
             // rbExamination
             // 
@@ -223,19 +231,19 @@ namespace Ap_Project_Clinic_
             this.rbExamination.TabStop = true;
             this.rbExamination.Text = "Examination";
             this.rbExamination.UseVisualStyleBackColor = true;
+            this.rbExamination.CheckedChanged += new System.EventHandler(this.rbExamination_CheckedChanged);
             // 
-            // textBox1
+            // txtpatientid
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(505, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtpatientid.Enabled = false;
+            this.txtpatientid.Location = new System.Drawing.Point(505, 24);
+            this.txtpatientid.Name = "txtpatientid";
+            this.txtpatientid.Size = new System.Drawing.Size(139, 22);
+            this.txtpatientid.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label2.Location = new System.Drawing.Point(348, 26);
             this.label2.Name = "label2";
@@ -246,9 +254,8 @@ namespace Ap_Project_Clinic_
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(14, 113);
+            this.label3.Location = new System.Drawing.Point(3, 1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 10;
@@ -256,8 +263,7 @@ namespace Ap_Project_Clinic_
             // 
             // txtname
             // 
-            this.txtname.Enabled = false;
-            this.txtname.Location = new System.Drawing.Point(175, 113);
+            this.txtname.Location = new System.Drawing.Point(164, 1);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(139, 22);
             this.txtname.TabIndex = 9;
@@ -265,9 +271,8 @@ namespace Ap_Project_Clinic_
             // txtfamilyname
             // 
             this.txtfamilyname.AutoSize = true;
-            this.txtfamilyname.Enabled = false;
             this.txtfamilyname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtfamilyname.Location = new System.Drawing.Point(348, 113);
+            this.txtfamilyname.Location = new System.Drawing.Point(337, 1);
             this.txtfamilyname.Name = "txtfamilyname";
             this.txtfamilyname.Size = new System.Drawing.Size(104, 20);
             this.txtfamilyname.TabIndex = 12;
@@ -275,8 +280,7 @@ namespace Ap_Project_Clinic_
             // 
             // txtfamily
             // 
-            this.txtfamily.Enabled = false;
-            this.txtfamily.Location = new System.Drawing.Point(509, 113);
+            this.txtfamily.Location = new System.Drawing.Point(498, 1);
             this.txtfamily.Name = "txtfamily";
             this.txtfamily.Size = new System.Drawing.Size(139, 22);
             this.txtfamily.TabIndex = 11;
@@ -284,9 +288,8 @@ namespace Ap_Project_Clinic_
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(14, 148);
+            this.label5.Location = new System.Drawing.Point(3, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 14;
@@ -294,8 +297,7 @@ namespace Ap_Project_Clinic_
             // 
             // txtphone
             // 
-            this.txtphone.Enabled = false;
-            this.txtphone.Location = new System.Drawing.Point(175, 148);
+            this.txtphone.Location = new System.Drawing.Point(164, 36);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(139, 22);
             this.txtphone.TabIndex = 13;
@@ -303,9 +305,8 @@ namespace Ap_Project_Clinic_
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(348, 150);
+            this.label6.Location = new System.Drawing.Point(337, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 16;
@@ -313,8 +314,7 @@ namespace Ap_Project_Clinic_
             // 
             // txtid
             // 
-            this.txtid.Enabled = false;
-            this.txtid.Location = new System.Drawing.Point(509, 150);
+            this.txtid.Location = new System.Drawing.Point(499, 34);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(139, 22);
             this.txtid.TabIndex = 15;
@@ -322,9 +322,8 @@ namespace Ap_Project_Clinic_
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(14, 185);
+            this.label7.Location = new System.Drawing.Point(3, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 20);
             this.label7.TabIndex = 18;
@@ -332,8 +331,7 @@ namespace Ap_Project_Clinic_
             // 
             // txtfilecode
             // 
-            this.txtfilecode.Enabled = false;
-            this.txtfilecode.Location = new System.Drawing.Point(175, 185);
+            this.txtfilecode.Location = new System.Drawing.Point(164, 73);
             this.txtfilecode.Name = "txtfilecode";
             this.txtfilecode.Size = new System.Drawing.Size(139, 22);
             this.txtfilecode.TabIndex = 17;
@@ -343,46 +341,38 @@ namespace Ap_Project_Clinic_
             this.label4.AutoSize = true;
             this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(728, 566);
+            this.label4.Location = new System.Drawing.Point(788, 569);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(28, 20);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Result";
+            this.label4.Text = "To";
             // 
             // txtresult
             // 
             this.txtresult.Enabled = false;
-            this.txtresult.Location = new System.Drawing.Point(799, 564);
+            this.txtresult.Location = new System.Drawing.Point(827, 567);
             this.txtresult.Name = "txtresult";
-            this.txtresult.Size = new System.Drawing.Size(214, 22);
+            this.txtresult.Size = new System.Drawing.Size(282, 22);
             this.txtresult.TabIndex = 19;
             // 
             // chkrestrictions
             // 
             this.chkrestrictions.AutoSize = true;
-            this.chkrestrictions.Location = new System.Drawing.Point(12, 32);
+            this.chkrestrictions.Location = new System.Drawing.Point(31, 475);
             this.chkrestrictions.Name = "chkrestrictions";
             this.chkrestrictions.Size = new System.Drawing.Size(147, 21);
             this.chkrestrictions.TabIndex = 21;
             this.chkrestrictions.Text = "Having restrictions";
             this.chkrestrictions.UseVisualStyleBackColor = true;
+            this.chkrestrictions.CheckedChanged += new System.EventHandler(this.chkrestrictions_CheckedChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.txtname);
+            this.groupBox2.Controls.Add(this.infopanel);
+            this.groupBox2.Controls.Add(this.chknewpatient);
             this.groupBox2.Controls.Add(this.chkhaveid);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtpatientid);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtfamily);
-            this.groupBox2.Controls.Add(this.txtfilecode);
-            this.groupBox2.Controls.Add(this.txtfamilyname);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtphone);
-            this.groupBox2.Controls.Add(this.txtid);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(28, 262);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(748, 224);
@@ -390,16 +380,36 @@ namespace Ap_Project_Clinic_
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
-            // radioButton2
+            // infopanel
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(13, 63);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(119, 21);
-            this.radioButton2.TabIndex = 24;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "chknewpatient";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.infopanel.Controls.Add(this.label3);
+            this.infopanel.Controls.Add(this.txtname);
+            this.infopanel.Controls.Add(this.label5);
+            this.infopanel.Controls.Add(this.txtid);
+            this.infopanel.Controls.Add(this.txtphone);
+            this.infopanel.Controls.Add(this.label6);
+            this.infopanel.Controls.Add(this.txtfamilyname);
+            this.infopanel.Controls.Add(this.label7);
+            this.infopanel.Controls.Add(this.txtfilecode);
+            this.infopanel.Controls.Add(this.txtfamily);
+            this.infopanel.Enabled = false;
+            this.infopanel.Location = new System.Drawing.Point(6, 96);
+            this.infopanel.Name = "infopanel";
+            this.infopanel.Size = new System.Drawing.Size(655, 111);
+            this.infopanel.TabIndex = 25;
+            this.infopanel.Paint += new System.Windows.Forms.PaintEventHandler(this.infopanel_Paint);
+            // 
+            // chknewpatient
+            // 
+            this.chknewpatient.AutoSize = true;
+            this.chknewpatient.Location = new System.Drawing.Point(13, 63);
+            this.chknewpatient.Name = "chknewpatient";
+            this.chknewpatient.Size = new System.Drawing.Size(119, 21);
+            this.chknewpatient.TabIndex = 24;
+            this.chknewpatient.TabStop = true;
+            this.chknewpatient.Text = "chknewpatient";
+            this.chknewpatient.UseVisualStyleBackColor = true;
+            this.chknewpatient.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // chkhaveid
             // 
@@ -411,10 +421,12 @@ namespace Ap_Project_Clinic_
             this.chkhaveid.TabStop = true;
             this.chkhaveid.Text = "Patient file code";
             this.chkhaveid.UseVisualStyleBackColor = true;
+            this.chkhaveid.CheckedChanged += new System.EventHandler(this.chkhaveid_CheckedChanged);
             // 
             // chkodd
             // 
             this.chkodd.AutoSize = true;
+            this.chkodd.Enabled = false;
             this.chkodd.Location = new System.Drawing.Point(217, 32);
             this.chkodd.Name = "chkodd";
             this.chkodd.Size = new System.Drawing.Size(113, 21);
@@ -426,6 +438,7 @@ namespace Ap_Project_Clinic_
             // chkeven
             // 
             this.chkeven.AutoSize = true;
+            this.chkeven.Enabled = false;
             this.chkeven.Location = new System.Drawing.Point(355, 32);
             this.chkeven.Name = "chkeven";
             this.chkeven.Size = new System.Drawing.Size(123, 21);
@@ -436,31 +449,53 @@ namespace Ap_Project_Clinic_
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.chkrestrictions);
             this.groupBox3.Controls.Add(this.chkeven);
             this.groupBox3.Controls.Add(this.chkodd);
             this.groupBox3.Location = new System.Drawing.Point(28, 475);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(501, 58);
+            this.groupBox3.Size = new System.Drawing.Size(501, 75);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Have Problem";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(394, 551);
+            this.button1.Location = new System.Drawing.Point(25, 556);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 46);
             this.button1.TabIndex = 22;
             this.button1.Text = "return to turns page";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Enabled = false;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label9.Location = new System.Drawing.Point(371, 569);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(116, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Result:   From";
+            // 
+            // txtfrom
+            // 
+            this.txtfrom.Enabled = false;
+            this.txtfrom.Location = new System.Drawing.Point(488, 567);
+            this.txtfrom.Name = "txtfrom";
+            this.txtfrom.Size = new System.Drawing.Size(258, 22);
+            this.txtfrom.TabIndex = 23;
+            // 
             // rateform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 607);
+            this.ClientSize = new System.Drawing.Size(1241, 607);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtfrom);
+            this.Controls.Add(this.chkrestrictions);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -477,6 +512,8 @@ namespace Ap_Project_Clinic_
             this.doctorform.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.infopanel.ResumeLayout(false);
+            this.infopanel.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -493,7 +530,7 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.RadioButton rbroot;
         private System.Windows.Forms.RadioButton rb1serface;
         private System.Windows.Forms.RadioButton rbsurface2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtpatientid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker ratetime;
         private System.Windows.Forms.Label label3;
@@ -510,7 +547,7 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.TextBox txtresult;
         private System.Windows.Forms.CheckBox chkrestrictions;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton chknewpatient;
         private System.Windows.Forms.RadioButton chkhaveid;
         private System.Windows.Forms.RadioButton chkodd;
         private System.Windows.Forms.RadioButton chkeven;
@@ -522,5 +559,8 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.ComboBox cbsu1;
         private System.Windows.Forms.ComboBox cbexam;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel infopanel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtfrom;
     }
 }
