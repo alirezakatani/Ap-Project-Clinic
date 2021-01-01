@@ -16,8 +16,7 @@ namespace Ap_Project_Clinic_
             txtallincome.Text = finantial.getallincome().ToString();
             txtempsalary.Text = Convert.ToString(finantial.allsalary);
             txtmedicalex.Text = Convert.ToString(finantial.allmedcalex);
-            txtallcheck.Text = "emplyes:\n" + employes.checkout() + "shareman:\n" + shareman.checkout();
-
+            txtallcheck.Text = finantial.finalcheckout();
 
         }
     }

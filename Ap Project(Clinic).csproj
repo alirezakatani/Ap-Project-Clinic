@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="allpayform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allpayform.Designer.cs">
+      <DependentUpon>allpayform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="allturnsform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allturnsform.Designer.cs">
+      <DependentUpon>allturnsform.cs</DependentUpon>
+    </Compile>
     <Compile Include="cliniccosts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,7 @@
       <DependentUpon>Financial.cs</DependentUpon>
     </Compile>
     <Compile Include="finantial.cs" />
+    <Compile Include="interfaces.cs" />
     <Compile Include="turns.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +134,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="allpayform.resx">
+      <DependentUpon>allpayform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allturnsform.resx">
+      <DependentUpon>allturnsform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cliniccosts.resx">
       <DependentUpon>cliniccosts.cs</DependentUpon>
     </EmbeddedResource>

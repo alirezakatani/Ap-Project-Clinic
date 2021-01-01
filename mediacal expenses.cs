@@ -23,9 +23,9 @@ namespace Ap_Project_Clinic_
             string[] cost;
             double costs = 0;
             int i = 0;
-            while(expen[i]!=null)
+           foreach(string exp in expen)
             {
-                cost = expen[i].Split('*');
+                cost = exp.Split('*');
                 costs += Convert.ToDouble(cost[1]);
                 i++;
 

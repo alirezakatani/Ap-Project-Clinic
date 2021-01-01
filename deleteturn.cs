@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ap_Project_Clinic_
 {
-    static class deleteturn
+    static class deleteturn 
     {
         public static Boolean deleteturnfun(DateTime dayofturn, string fid)
         {
@@ -39,9 +39,6 @@ namespace Ap_Project_Clinic_
             }
             System.IO.File.AppendAllText(path, save);
             return result;
-
-
-
         }
 
 

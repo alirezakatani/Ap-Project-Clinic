@@ -41,5 +41,11 @@ namespace Ap_Project_Clinic_
             cliniccosts clicosform = new cliniccosts();
             clicosform.Show(this);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            paymentform x = new paymentform();
+            x.Show(this);
+        }
     }
 }

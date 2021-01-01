@@ -7,6 +7,7 @@ namespace Ap_Project_Clinic_
     public partial class turns : Form
     {
         List<nobatdehi> todayturn = new List<nobatdehi>();
+        nobatdehi x;
         public turns()
         {
             InitializeComponent();
@@ -49,13 +50,24 @@ namespace Ap_Project_Clinic_
         private void button2_Click(object sender, EventArgs e)
         {
             string saveincomefile = Application.StartupPath + "\\income.txt";
-            string cost =txtdoctor.Text+"*"+txtpayment.Text;
+            string cost =txtdoctor.Text+"*"+txtpayment.Text+"\n";
             System.IO.File.AppendAllText(saveincomefile, cost);
+            managenobat manage = new managenobat(x);
+            manage.deletenobat(datenow.Value, txtfilecode.Text);
+            foreach(Control c in panel1.Controls)
+            {
+                c.Text = "";
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            todayturn = nobatdehi.getalltoday(datenow.Value);
+            //todayturn = nobatdehi.getalltoday(datenow.Value);
+            readandwrite read = new readandwrite();
+
+
+            todayturn = read.getallnobatbasespeanddate(datenow.Value);
+       
             getturn();
             
         }
@@ -81,7 +93,7 @@ namespace Ap_Project_Clinic_
                 MessageBox.Show("invalid turn.");
                 return;
             }
-            nobatdehi x = todayturn[i];
+             x = todayturn[i];
             if (x == null)
             {
                 MessageBox.Show("wrong date");

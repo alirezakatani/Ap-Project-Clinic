@@ -18,7 +18,11 @@ namespace Ap_Project_Clinic_
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {  Boolean x= deleteturn.deleteturnfun(dateturn.Value, txtfileid.Text);
+        { /* Boolean x= deleteturn.deleteturnfun(dateturn.Value, txtfileid.Text);*/
+            nobatdehi delno = new nobatdehi();
+            delno.date = dateturn.Value;
+            managenobat manage = new managenobat(delno);
+            Boolean x = manage.deletenobat(dateturn.Value, txtfileid.Text);
             if(x==true)
             {
                 txtresult.Text = "succsesful";

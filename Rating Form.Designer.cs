@@ -51,8 +51,6 @@ namespace Ap_Project_Clinic_
             this.txtfamily = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtphone = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtid = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtfilecode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -302,28 +300,11 @@ namespace Ap_Project_Clinic_
             this.txtphone.Size = new System.Drawing.Size(139, 22);
             this.txtphone.TabIndex = 13;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(337, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "ID Number";
-            // 
-            // txtid
-            // 
-            this.txtid.Location = new System.Drawing.Point(499, 34);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(139, 22);
-            this.txtid.TabIndex = 15;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(3, 73);
+            this.label7.Location = new System.Drawing.Point(335, 38);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 20);
             this.label7.TabIndex = 18;
@@ -331,7 +312,7 @@ namespace Ap_Project_Clinic_
             // 
             // txtfilecode
             // 
-            this.txtfilecode.Location = new System.Drawing.Point(164, 73);
+            this.txtfilecode.Location = new System.Drawing.Point(496, 38);
             this.txtfilecode.Name = "txtfilecode";
             this.txtfilecode.Size = new System.Drawing.Size(139, 22);
             this.txtfilecode.TabIndex = 17;
@@ -358,7 +339,7 @@ namespace Ap_Project_Clinic_
             // chkrestrictions
             // 
             this.chkrestrictions.AutoSize = true;
-            this.chkrestrictions.Location = new System.Drawing.Point(31, 475);
+            this.chkrestrictions.Location = new System.Drawing.Point(34, 450);
             this.chkrestrictions.Name = "chkrestrictions";
             this.chkrestrictions.Size = new System.Drawing.Size(147, 21);
             this.chkrestrictions.TabIndex = 21;
@@ -375,7 +356,7 @@ namespace Ap_Project_Clinic_
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(28, 262);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(748, 224);
+            this.groupBox2.Size = new System.Drawing.Size(748, 182);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
@@ -385,9 +366,7 @@ namespace Ap_Project_Clinic_
             this.infopanel.Controls.Add(this.label3);
             this.infopanel.Controls.Add(this.txtname);
             this.infopanel.Controls.Add(this.label5);
-            this.infopanel.Controls.Add(this.txtid);
             this.infopanel.Controls.Add(this.txtphone);
-            this.infopanel.Controls.Add(this.label6);
             this.infopanel.Controls.Add(this.txtfamilyname);
             this.infopanel.Controls.Add(this.label7);
             this.infopanel.Controls.Add(this.txtfilecode);
@@ -395,7 +374,7 @@ namespace Ap_Project_Clinic_
             this.infopanel.Enabled = false;
             this.infopanel.Location = new System.Drawing.Point(6, 96);
             this.infopanel.Name = "infopanel";
-            this.infopanel.Size = new System.Drawing.Size(655, 111);
+            this.infopanel.Size = new System.Drawing.Size(655, 77);
             this.infopanel.TabIndex = 25;
             this.infopanel.Paint += new System.Windows.Forms.PaintEventHandler(this.infopanel_Paint);
             // 
@@ -451,7 +430,7 @@ namespace Ap_Project_Clinic_
             // 
             this.groupBox3.Controls.Add(this.chkeven);
             this.groupBox3.Controls.Add(this.chkodd);
-            this.groupBox3.Location = new System.Drawing.Point(28, 475);
+            this.groupBox3.Location = new System.Drawing.Point(31, 450);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(501, 75);
             this.groupBox3.TabIndex = 21;
@@ -539,8 +518,6 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.TextBox txtfamily;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtphone;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtfilecode;
         private System.Windows.Forms.Label label4;

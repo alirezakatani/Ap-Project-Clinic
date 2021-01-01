@@ -67,7 +67,7 @@ namespace Ap_Project_Clinic_
                     MessageBox.Show("please inter true date,this date is " + date.DayOfWeek + " and isnt odd");
                 }
             }
-            else
+            else if(chkodd.Checked==true)
             {
                 if (date.DayOfWeek != DayOfWeek.Sunday && date.DayOfWeek != DayOfWeek.Tuesday && date.DayOfWeek != DayOfWeek.Thursday)
                 {
@@ -106,23 +106,27 @@ namespace Ap_Project_Clinic_
                 string name = txtname.Text;
                 string familyname = txtfamily.Text;
                 string phone = txtphone.Text;
-                string id = txtid.Text;
+                string id = txtfilecode.Text;
                 x = new nobatdehi(name, familyname, id, work, phone, date, txtfilecode.Text, doctorname, chkeven.Checked, chkodd.Checked);
             }
-            DateTime s = x.readandgetnobat(path);
+            //DateTime s = x.readandgetnobat(path);
+            managenobat manage = new managenobat(x);
+            DateTime s = manage.getnobat();
+            //DateTime s = 
             if (s == new DateTime(1, 1, 1, 1, 1, 1))
             {
                 DialogResult res = MessageBox.Show("not have turn in this day do you want to set after this day", "settime", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if (res == DialogResult.Yes)
                 {
-                    s = x.another();
+                    //s = x.another();
+                    s = manage.another();
                     txtresult.Text = s.ToString();
                 }
             }
             else
             {
-               txtfrom.Text=s.AddMinutes(-(double)x.minute).ToString();
-txtresult.Text = s.ToString() + " " + s.DayOfWeek;
+               txtresult.Text=s.AddMinutes(+(double)x.minute).ToString();
+txtfrom.Text = s.ToString() + " " + s.DayOfWeek;
             }
 
 

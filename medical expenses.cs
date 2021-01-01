@@ -20,8 +20,9 @@ namespace Ap_Project_Clinic_
 
         private void Btnsave_Click(object sender, EventArgs e)
         {
-            string saves = txtkind + "*" + txtcost;
-            System.IO.File.AppendAllText(path + "\\nobat.txt", saves);
+            string saves = txtkind.Text+ "*" + txtcost.Text;
+            System.IO.File.AppendAllText(path, saves);
+            Close();
         }
       
     }

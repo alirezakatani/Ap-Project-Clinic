@@ -14,6 +14,8 @@ namespace Ap_Project_Clinic_
         [STAThread]
         static void Main()
         {
+            List<nobatdehi> x = new List<nobatdehi>();
+            var dvfd = from person in x orderby person.date descending select person;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormWelcome());

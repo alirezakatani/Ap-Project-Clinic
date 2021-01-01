@@ -26,6 +26,7 @@ namespace Ap_Project_Clinic_
             System.IO.File.AppendAllText(path, information);
             System.IO.File.AppendAllText(pathsaveaccount, account);
             
+            
         }
     }
 }

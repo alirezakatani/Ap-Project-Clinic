@@ -35,5 +35,11 @@ namespace Ap_Project_Clinic_
             deleteturnform detuform = new deleteturnform();
             detuform.Show(this);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            allturnsform turn = new allturnsform();
+            turn.Show(this);
+        }
     }
 }

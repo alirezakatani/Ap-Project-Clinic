@@ -2,14 +2,17 @@
 
 namespace Ap_Project_Clinic_
 {
-    public class shareman
+    public class shareman : Ipay
     {
-        string name;
-        string familyname;
-        double interestpercent;
-        string id;
-        string account;
-        public shareman(string id)
+        public string name { get; set; }
+        public string familyname { get; set; }
+        public double salary { get; set; }//percent of share
+        public string idnumber { get; set; }
+        public string account { get; set; }
+        public string phone { get; set; }
+        public Double lastcash { get; set; }
+
+        public shareman(string idnumber)
         {
             string path = rateform.getpath() + @"\shareman.txt";
 
@@ -17,21 +20,22 @@ namespace Ap_Project_Clinic_
             for (int i = 0; i < allinform1.Length; i++)
             {
                 string[] personinform = allinform1[i].Split('*');
-                if (personinform[5] == id)
+                if (personinform[5] == idnumber)
                 {
                     name = personinform[0];
                     familyname = personinform[1];
-                    interestpercent = Convert.ToDouble(personinform[2]);
-                    id = personinform[4];
+                    salary = Convert.ToDouble(personinform[2]);
+                    idnumber = personinform[4];
                     account = personinform[5];
+                    lastcash = 0;
 
                 }
 
             }
         }
-        public static string checkout()//needs to complete
+        public string checkoutv2()
         {
-            double allprofit = finantial.finalcheckout();
+            double allprofit = finantial.finalcheckout1();
             string path = rateform.getpath() + @"\shareman.txt";
             string pathsaveaccount = rateform.getpath() + "\\account.txt";
             string[] allinform1 = System.IO.File.ReadAllLines(path);
@@ -51,7 +55,7 @@ namespace Ap_Project_Clinic_
                     if (personinform[5] == acc[2])
                     {
 
-                        string pay = personinform[5] + "*" + personinform[0] + "*" + personinform[1] + '*' + (Convert.ToDouble(acc[3]) + salary).ToString() + '*' + DateTime.Now + '*' + "shareman";
+                        string pay = personinform[5] + '*' + personinform[0] + '*' + personinform[1] + '*' + (Convert.ToDouble(acc[3]) + salary).ToString() + '*' + DateTime.Now + '*' + "shareman";
                         System.IO.File.AppendAllText(pathsaveaccount, pay);
                         allpay += pay + "\n";
 
@@ -64,6 +68,16 @@ namespace Ap_Project_Clinic_
             }
 
             return allpay;
+
+        }
+        public string checkout()
+        {
+
+            string pathsaveaccount = rateform.getpath() + "\\account.txt";
+            lastcash += salary * finantial.allprofit / 100;
+            string pay = account + '*' + name + '*' + familyname + '*' + lastcash + '*' + DateTime.Now + '*' + "shareman";
+            System.IO.File.AppendAllText(pathsaveaccount, pay);
+            return pay;
 
         }
 

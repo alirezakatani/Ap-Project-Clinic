@@ -34,6 +34,7 @@ namespace Ap_Project_Clinic_
             this.btnsalary = new System.Windows.Forms.Button();
             this.btnClinic = new System.Windows.Forms.Button();
             this.btnmedical = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -90,11 +91,23 @@ namespace Ap_Project_Clinic_
             this.btnmedical.UseVisualStyleBackColor = true;
             this.btnmedical.Click += new System.EventHandler(this.btnmedical_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(98, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 52);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "checkout";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FinancialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 491);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnmedical);
             this.Controls.Add(this.btnClinic);
             this.Controls.Add(this.btnsalary);
@@ -115,5 +128,6 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Button btnsalary;
         private System.Windows.Forms.Button btnClinic;
         private System.Windows.Forms.Button btnmedical;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -52,13 +52,15 @@ namespace Ap_Project_Clinic_
             this.txtdoctor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 74);
+            this.label1.Location = new System.Drawing.Point(13, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 0;
@@ -67,7 +69,7 @@ namespace Ap_Project_Clinic_
             // txtname
             // 
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(161, 69);
+            this.txtname.Location = new System.Drawing.Point(137, 60);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(149, 27);
             this.txtname.TabIndex = 1;
@@ -86,7 +88,7 @@ namespace Ap_Project_Clinic_
             // txtphone
             // 
             this.txtphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtphone.Location = new System.Drawing.Point(161, 112);
+            this.txtphone.Location = new System.Drawing.Point(137, 103);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(149, 27);
             this.txtphone.TabIndex = 8;
@@ -95,7 +97,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 117);
+            this.label4.Location = new System.Drawing.Point(13, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 7;
@@ -104,7 +106,7 @@ namespace Ap_Project_Clinic_
             // txtturn
             // 
             this.txtturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtturn.Location = new System.Drawing.Point(486, 108);
+            this.txtturn.Location = new System.Drawing.Point(462, 99);
             this.txtturn.Name = "txtturn";
             this.txtturn.Size = new System.Drawing.Size(149, 27);
             this.txtturn.TabIndex = 10;
@@ -113,7 +115,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(362, 115);
+            this.label2.Location = new System.Drawing.Point(338, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 9;
@@ -122,7 +124,7 @@ namespace Ap_Project_Clinic_
             // txtfamilyname
             // 
             this.txtfamilyname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfamilyname.Location = new System.Drawing.Point(486, 66);
+            this.txtfamilyname.Location = new System.Drawing.Point(462, 57);
             this.txtfamilyname.Name = "txtfamilyname";
             this.txtfamilyname.Size = new System.Drawing.Size(149, 27);
             this.txtfamilyname.TabIndex = 12;
@@ -131,7 +133,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(362, 69);
+            this.label3.Location = new System.Drawing.Point(338, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 20);
             this.label3.TabIndex = 11;
@@ -140,7 +142,7 @@ namespace Ap_Project_Clinic_
             // txtfilecode
             // 
             this.txtfilecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfilecode.Location = new System.Drawing.Point(161, 158);
+            this.txtfilecode.Location = new System.Drawing.Point(137, 149);
             this.txtfilecode.Name = "txtfilecode";
             this.txtfilecode.Size = new System.Drawing.Size(149, 27);
             this.txtfilecode.TabIndex = 14;
@@ -149,7 +151,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 163);
+            this.label5.Location = new System.Drawing.Point(13, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 20);
             this.label5.TabIndex = 13;
@@ -157,7 +159,7 @@ namespace Ap_Project_Clinic_
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(41, 210);
+            this.button2.Location = new System.Drawing.Point(20, 257);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 30);
             this.button2.TabIndex = 15;
@@ -168,7 +170,7 @@ namespace Ap_Project_Clinic_
             // txtpayment
             // 
             this.txtpayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpayment.Location = new System.Drawing.Point(269, 214);
+            this.txtpayment.Location = new System.Drawing.Point(138, 201);
             this.txtpayment.Name = "txtpayment";
             this.txtpayment.Size = new System.Drawing.Size(149, 27);
             this.txtpayment.TabIndex = 17;
@@ -177,7 +179,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(173, 214);
+            this.label6.Location = new System.Drawing.Point(17, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 16;
@@ -206,7 +208,7 @@ namespace Ap_Project_Clinic_
             // 
             // datenow
             // 
-            this.datenow.Location = new System.Drawing.Point(161, 32);
+            this.datenow.Location = new System.Drawing.Point(137, 23);
             this.datenow.Name = "datenow";
             this.datenow.Size = new System.Drawing.Size(175, 22);
             this.datenow.TabIndex = 20;
@@ -215,7 +217,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(37, 30);
+            this.label7.Location = new System.Drawing.Point(13, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 20);
             this.label7.TabIndex = 21;
@@ -223,7 +225,7 @@ namespace Ap_Project_Clinic_
             // 
             // turndate
             // 
-            this.turndate.Location = new System.Drawing.Point(486, 34);
+            this.turndate.Location = new System.Drawing.Point(462, 25);
             this.turndate.Name = "turndate";
             this.turndate.Size = new System.Drawing.Size(175, 22);
             this.turndate.TabIndex = 22;
@@ -232,7 +234,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(362, 34);
+            this.label8.Location = new System.Drawing.Point(338, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 20);
             this.label8.TabIndex = 23;
@@ -241,7 +243,7 @@ namespace Ap_Project_Clinic_
             // txtdoctor
             // 
             this.txtdoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdoctor.Location = new System.Drawing.Point(486, 156);
+            this.txtdoctor.Location = new System.Drawing.Point(462, 147);
             this.txtdoctor.Name = "txtdoctor";
             this.txtdoctor.Size = new System.Drawing.Size(149, 27);
             this.txtdoctor.TabIndex = 25;
@@ -250,7 +252,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(362, 163);
+            this.label9.Location = new System.Drawing.Point(338, 154);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 20);
             this.label9.TabIndex = 24;
@@ -267,39 +269,48 @@ namespace Ap_Project_Clinic_
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.datenow);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtdoctor);
+            this.panel1.Controls.Add(this.txtname);
+            this.panel1.Controls.Add(this.txtpayment);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtphone);
+            this.panel1.Controls.Add(this.turndate);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtturn);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtfamilyname);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtfilecode);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(703, 239);
+            this.panel1.TabIndex = 27;
+            // 
             // turns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 398);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.txtdoctor);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.turndate);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.datenow);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.txtpayment);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtfilecode);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtfamilyname);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtturn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtphone);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtname);
-            this.Controls.Add(this.label1);
             this.Name = "turns";
             this.Text = "turns";
             this.Load += new System.EventHandler(this.turns_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -328,5 +339,6 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.TextBox txtdoctor;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

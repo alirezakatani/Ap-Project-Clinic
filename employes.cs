@@ -3,29 +3,33 @@
 namespace Ap_Project_Clinic_
 {
 
-    class employes
+    class employes : Ipay
     {
-        string name;
-        string familyname;
-        double salary;
-        string Job;
-        string id;
-        string account;
+        public string name { get; set; }
+        public string familyname { get; set; }
+        public double salary { get; set; }
+        public string idnumber { get; set; }
+        public string account { get; set; }
+        public string phone { get; set; }
+        public string Job { get; set; }
+        public double lastcash { get; set; }
+
+
         string path;
-        public employes(string id)
+        public employes(string idnumber)
         {
             path = rateform.getpath() + "\\eminfo.txt";
             string[] allinform1 = System.IO.File.ReadAllLines(path);
             for (int i = 0; i < allinform1.Length; i++)
             {
                 string[] personinform = allinform1[i].Split('*');
-                if (personinform[4] == id)
+                if (personinform[4] == idnumber)
                 {
                     name = personinform[0];
                     familyname = personinform[1];
                     salary = Convert.ToDouble(personinform[2]);
                     Job = personinform[3];
-                    id = personinform[4];
+                    idnumber = personinform[4];
                     account = personinform[5];
                 }
 
@@ -39,14 +43,14 @@ namespace Ap_Project_Clinic_
             string path = rateform.getpath() + "\\eminfo.txt";
             string[] emp = System.IO.File.ReadAllLines(path);
             string[] cost;
-            for (int i = 0; emp[i] != null; i++)
+            foreach(string em in emp)
             {
-                cost = emp[i].Split('*');
+                cost = em.Split('*');
                 allsalary += Convert.ToDouble(cost[2]);
             }
             return allsalary;
         }
-        public static string checkout()
+        public string checkoutv2()
         {
             string pathckeck = rateform.getpath() + "\\checkoutemployee.txt";
             string pathsaveaccount = rateform.getpath() + "\\account.txt";
@@ -79,13 +83,28 @@ namespace Ap_Project_Clinic_
             }
             return ret;
         }
+        public string checkout()
+        {
+            string pathckeck = rateform.getpath() + "\\checkoutemployee.txt";
+            string pathsaveaccount = rateform.getpath() + "\\account.txt";
+            string check = "name:" + name + "*" + "familyname:" + familyname + "*" + "salary:" + salary + "*" + "account:" + account + "*" + "Date:" + DateTime.Now;
+            string acc = account + '*' + name + '*' + familyname + '*' + lastcash + '*' + DateTime.Now + '*';
+            System.IO.File.AppendAllText(pathckeck, check);
+            System.IO.File.AppendAllText(pathsaveaccount, acc);
+            return acc;
+
+
+
+
+        }
         public static string getspecialsalary(string name, string work)
         {
 
             string pat = rateform.getpath() + "\\eminfo.txt";
             string[] emp = System.IO.File.ReadAllLines(pat);
             string[] cost;
-            for (int i = 0; emp[i] != null; i++)
+            
+            for (int i = 0; i<emp.Length; i++)
             {
                 cost = emp[i].Split('*');
                 if (name == cost[0] && work == cost[3])
