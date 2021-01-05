@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ap_Project_Clinic_
 {
@@ -13,6 +14,7 @@ namespace Ap_Project_Clinic_
         public string phone { get; set; }
         public string Job { get; set; }
         public double lastcash { get; set; }
+        
 
 
         string path;
@@ -69,8 +71,8 @@ namespace Ap_Project_Clinic_
                     if (acc[0] == empi[5])
                     {
                         acci = acc;
-                        string check = "name:" + empi[0] + "*" + "familyname:" + empi[1] + "*" + "salary:" + empi[2] + "*" + "account:" + empi[5] + "*" + "Date:" + DateTime.Now;
-                        string account = acci[0] + "*" + acci[1] + "*" + acci[2] + "*" + (Convert.ToInt32(acci[3]) + Convert.ToInt32(empi[2])) + "*" + DateTime.Now + "*" + empi[2];
+                        string check = "name:" + empi[0] + "*" + "familyname:" + empi[1] + "*" + "salary:" + empi[2] + "*" + "account:" + empi[5] + "*" + "Date:" + DateTime.Now+"\n";
+                        string account = acci[0] + "*" + acci[1] + "*" + acci[2] + "*" + (Convert.ToInt32(acci[3]) + Convert.ToInt32(empi[2])) + "*" + DateTime.Now + "*" + empi[2]+"\n";
                         System.IO.File.AppendAllText(pathckeck, check);
                         System.IO.File.AppendAllText(pathsaveaccount, account);
                         ret += check + "\n";
@@ -87,8 +89,8 @@ namespace Ap_Project_Clinic_
         {
             string pathckeck = rateform.getpath() + "\\checkoutemployee.txt";
             string pathsaveaccount = rateform.getpath() + "\\account.txt";
-            string check = "name:" + name + "*" + "familyname:" + familyname + "*" + "salary:" + salary + "*" + "account:" + account + "*" + "Date:" + DateTime.Now;
-            string acc = account + '*' + name + '*' + familyname + '*' + lastcash + '*' + DateTime.Now + '*';
+            string check = "name:" + name + "*" + "familyname:" + familyname + "*" + "salary:" + salary + "*" + "account:" + account + "*" + "Date:" + DateTime.Now+"\n";
+            string acc = account + '*' + name + '*' + familyname + '*' + lastcash + '*' + DateTime.Now + "\n";
             System.IO.File.AppendAllText(pathckeck, check);
             System.IO.File.AppendAllText(pathsaveaccount, acc);
             return acc;

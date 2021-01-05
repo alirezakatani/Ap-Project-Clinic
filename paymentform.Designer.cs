@@ -36,7 +36,9 @@ namespace Ap_Project_Clinic_
             this.label3 = new System.Windows.Forms.Label();
             this.txtallincome = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtallcheck = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtmedicalex
@@ -103,21 +105,33 @@ namespace Ap_Project_Clinic_
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtallcheck
+            // dataGridView1
             // 
-            this.txtallcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtallcheck.Location = new System.Drawing.Point(16, 240);
-            this.txtallcheck.Multiline = true;
-            this.txtallcheck.Name = "txtallcheck";
-            this.txtallcheck.Size = new System.Drawing.Size(793, 333);
-            this.txtallcheck.TabIndex = 7;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 218);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(809, 364);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(171, 182);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 30);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "clear all files";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // paymentform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 594);
-            this.Controls.Add(this.txtallcheck);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtallincome);
@@ -127,6 +141,7 @@ namespace Ap_Project_Clinic_
             this.Controls.Add(this.txtmedicalex);
             this.Name = "paymentform";
             this.Text = "paymentform";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +156,7 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtallincome;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtallcheck;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
     }
 }

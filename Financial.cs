@@ -47,5 +47,11 @@ namespace Ap_Project_Clinic_
             paymentform x = new paymentform();
             x.Show(this);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            allpayform pay = new allpayform();
+            pay.Show(this);
+        }
     }
 }

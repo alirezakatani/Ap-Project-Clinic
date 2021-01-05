@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace Ap_Project_Clinic_
 {
     public class shareman : Ipay
@@ -11,8 +11,8 @@ namespace Ap_Project_Clinic_
         public string account { get; set; }
         public string phone { get; set; }
         public Double lastcash { get; set; }
-
-        public shareman(string idnumber)
+        public List<shareman> share = new List<shareman>();
+        public shareman(string idnumber)//read from file
         {
             string path = rateform.getpath() + @"\shareman.txt";
 
@@ -33,29 +33,26 @@ namespace Ap_Project_Clinic_
 
             }
         }
-        public string checkoutv2()
+        public string checkoutv2()//write in file
         {
             double allprofit = finantial.finalcheckout1();
-            string path = rateform.getpath() + @"\shareman.txt";
             string pathsaveaccount = rateform.getpath() + "\\account.txt";
-            string[] allinform1 = System.IO.File.ReadAllLines(path);
+            set();
             string[] allacc = System.IO.File.ReadAllLines(pathsaveaccount);
             string[] acc;
             double salary = 0;
             string allpay = "";
-            for (int i = 0; i < allinform1.Length; i++)
+            for (int i = 0; i < share.Count; i++)
             {
-                string[] personinform = allinform1[i].Split('*');
-                salary = (Convert.ToDouble(personinform[2]) * allprofit) / 100;
-
-
+                
+                salary = (Convert.ToDouble(share[i].salary) * allprofit) / 100;
                 for (int j = 0; allacc[j] != null; j++)
                 {
                     acc = allacc[j].Split('*');
-                    if (personinform[5] == acc[2])
+                    if (share[i].account == acc[2])
                     {
 
-                        string pay = personinform[5] + '*' + personinform[0] + '*' + personinform[1] + '*' + (Convert.ToDouble(acc[3]) + salary).ToString() + '*' + DateTime.Now + '*' + "shareman";
+                        string pay = share[i].account + '*' + share[i].name + '*' +share[i].familyname + '*' + (Convert.ToDouble(acc[3]) + salary).ToString() + '*' + DateTime.Now + '*' + "shareman";
                         System.IO.File.AppendAllText(pathsaveaccount, pay);
                         allpay += pay + "\n";
 
@@ -80,6 +77,21 @@ namespace Ap_Project_Clinic_
             return pay;
 
         }
+        public List<shareman> set()
+        {
+            string path = rateform.getpath() + @"\shareman.txt";
+            string[] allinform1 = System.IO.File.ReadAllLines(path);
+            for (int i = 0; i < allinform1.Length; i++)
+            {
+                string[] personinform = allinform1[i].Split('*');
+                share.Add(new shareman(personinform[5]));
+
+            }
+            return share;
+
+
+        }
+
 
 
 

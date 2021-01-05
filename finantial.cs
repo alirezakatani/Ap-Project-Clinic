@@ -13,6 +13,7 @@ namespace Ap_Project_Clinic_
         public static double allsalary { get; set; }
         public static double allprofit { get; set; }
         public static double allmedcalex { get; set; }
+        public static  List<Ipay> pays = new List<Ipay>();
         public static double getallincome()
         {
             allincome = 0;
@@ -32,7 +33,7 @@ namespace Ap_Project_Clinic_
             string[] income2;
 
 
-            for (int i = 0; income[i] != null; i++)
+            for (int i = 0; i < income.Length; i++)
             {
                 income2 = income[i].Split('*');
                 allincome += Convert.ToDouble(income2[1]);
@@ -64,16 +65,18 @@ namespace Ap_Project_Clinic_
                 string[] eminfo;
 
                 List<Ipay> shareman = new List<Ipay>();
-                for (int i = 0; allinform1[i] != null; i++)
+                for (int i = 0; i < allinform1.Length; i++)
                 {
                     personinform = allinform1[i].Split('*');
                     shareman.Add(new shareman(personinform[4]));
+                    pays.Add(new shareman(personinform[4]));
 
                 }
-                for (int i = 0; allem[i] != null; i++)
+                for (int i = 0; i < allem.Length; i++)
                 {
                     eminfo = allem[i].Split('*');
                     shareman.Add(new employes(eminfo[4]));
+                    pays.Add(new employes(eminfo[4]));
 
                 }
                 for (int i = 0; i < shareman.Count; i++)
@@ -90,10 +93,12 @@ namespace Ap_Project_Clinic_
 
 
         }
-        public static void set()
+        public static List<Ipay> set()
         {
             getallincome();
             finalcheckout();
+            return pays;
+
         }
         public static double finalcheckout1()
         {
@@ -104,5 +109,6 @@ namespace Ap_Project_Clinic_
             return allprofit;
 
         }
+
     }
 }
