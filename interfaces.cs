@@ -40,6 +40,7 @@ namespace Ap_Project_Clinic_
         Boolean notodd { get; set; }
         int shomarenobat { get; set; }
     }
+
    
 
 }

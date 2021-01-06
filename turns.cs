@@ -49,6 +49,12 @@ namespace Ap_Project_Clinic_
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if(txtpayment.Text=="")
+            {
+                MessageBox.Show("not correct");
+                return;
+
+            }
             string saveincomefile = Application.StartupPath + "\\income.txt";
             string cost =txtdoctor.Text+"*"+txtpayment.Text+"\n";
             System.IO.File.AppendAllText(saveincomefile, cost);
@@ -106,8 +112,9 @@ namespace Ap_Project_Clinic_
                 txtdoctor.Text = x.doctorname;
                 txtfilecode.Text = x.fileid;
                 txtturn.Text = Convert.ToString(x.shomarenobat);
-                 double money = Convert.ToDouble(returncost(x.work)) + Convert.ToDouble(employes.getspecialsalary(x.doctorname, "doctor"));
-                 txtpayment.Text = money.ToString();
+                employes newemp = new employes(x.doctorname, "doctor");
+                double money = Convert.ToDouble(returncost(x.work)) + Convert.ToDouble(readandwriteemp.getspecialsalary(newemp));
+                txtpayment.Text = money.ToString();
 
             }
             

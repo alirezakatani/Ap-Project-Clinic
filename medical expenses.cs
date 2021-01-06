@@ -20,7 +20,7 @@ namespace Ap_Project_Clinic_
 
         private void Btnsave_Click(object sender, EventArgs e)
         {
-            string saves = txtkind.Text+ "*" + txtcost.Text;
+            string saves = txtkind.Text+ "*" + txtcost.Text+"\n";
             System.IO.File.AppendAllText(path, saves);
             Close();
         }

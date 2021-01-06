@@ -558,7 +558,29 @@ namespace Ap_Project_Clinic_
 
 
             }
+            
             DateTime ooop = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day + 1, 15, 0, 0);
+            if (newnobat.noteven == true)
+            {
+                if ( ooop.DayOfWeek == DayOfWeek.Saturday || ooop.DayOfWeek == DayOfWeek.Monday || ooop.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                   ooop=ooop.AddDays(1);
+                    
+                }
+            }
+            else if (newnobat.notodd == true)
+            {
+                if (ooop.DayOfWeek == DayOfWeek.Sunday || ooop.DayOfWeek == DayOfWeek.Tuesday || ooop.DayOfWeek == DayOfWeek.Thursday)
+                {
+                   ooop= ooop.AddDays(1);
+                    if(ooop.DayOfWeek==DayOfWeek.Friday)
+                    {
+                        ooop = ooop.AddDays(1);
+                    }
+
+                }
+
+            }
             newnobat.date = ooop;
             timenoabt.Add(newnobat.date);
             s.writeinfile(newnobat, timenoabt);
@@ -573,7 +595,7 @@ namespace Ap_Project_Clinic_
         List<nobatdehi> newlist2 = new List<nobatdehi>();
         List<DateTime> timenoabt2 = new List<DateTime>();
         string path = rateform.getpath() + "\\nobat.txt";
-        string deletepath = rateform.getpath() + "\\deletednobat";
+        string deletepath = rateform.getpath() + "\\deletednobat.txt";
         //DateTime day;
         public nobatdehi newnobat { get; set; }
         public List<DateTime> getallnobat(nobatdehi nobat)//getallnobats

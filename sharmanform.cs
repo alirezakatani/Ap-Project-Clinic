@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ap_Project_Clinic_
@@ -19,14 +12,26 @@ namespace Ap_Project_Clinic_
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string account;
-            string pathsaveaccount = rateform.getpath() + "\\account.txt";
-            string information = txtname.Text +'*'+ txtfamilyname.Text+'*' + txtsalpercent.Text +'*'+ txtsharepercent.Text +'*'+ txtid.Text +'*'+txtaccount.Text+"\n";
-            account = txtname.Text + '*' + txtfamilyname.Text +'*'+txtaccount.Text+ '*' + 0 + '*' + DateTime.Now+'*'+"shareman";
+         
+            string information = txtname.Text + '*' + txtfamilyname.Text + '*' + txtsalpercent.Text + '*' + txtsharepercent.Text + '*' + txtid.Text + '*' + txtaccount.Text + '*'+0+"\n";
             System.IO.File.AppendAllText(path, information);
-            System.IO.File.AppendAllText(pathsaveaccount, account);
-            
-            
+        
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Control con in panel1.Controls)
+            {
+                if (con is TextBox)
+                {
+                    con.Text = "";
+                }
+         
+
+
+
+            }
         }
     }
 }

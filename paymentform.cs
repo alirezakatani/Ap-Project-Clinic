@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Ap_Project_Clinic_
 {
@@ -14,10 +14,20 @@ namespace Ap_Project_Clinic_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pays=finantial.set();
+
+            pays = finantial.set();
             txtallincome.Text = finantial.getallincome().ToString();
             txtempsalary.Text = Convert.ToString(finantial.allsalary);
             txtmedicalex.Text = Convert.ToString(finantial.allmedcalex);
+
+            if (pays == null)
+            {
+                MessageBox.Show("not enogh cash");
+                return;
+            }
+
+
+
             dataGridView1.DataSource = pays;
 
 

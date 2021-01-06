@@ -62,16 +62,18 @@ namespace Ap_Project_Clinic_
             string doctorname = "";
             if (chkeven.Checked == true)
             {
-                if (date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Monday && date.DayOfWeek != DayOfWeek.Wednesday)
+                if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Monday || date.DayOfWeek == DayOfWeek.Wednesday)
                 {
                     MessageBox.Show("please inter true date,this date is " + date.DayOfWeek + " and isnt odd");
+                    return;
                 }
             }
             else if(chkodd.Checked==true)
             {
-                if (date.DayOfWeek != DayOfWeek.Sunday && date.DayOfWeek != DayOfWeek.Tuesday && date.DayOfWeek != DayOfWeek.Thursday)
+                if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Tuesday || date.DayOfWeek == DayOfWeek.Thursday)
                 {
                     MessageBox.Show("please inter true date,this date is " + date.DayOfWeek + " and isnt even");
+                    return;
                 }
 
             }
@@ -120,7 +122,8 @@ namespace Ap_Project_Clinic_
                 {
                     //s = x.another();
                     s = manage.another();
-                    txtresult.Text = s.ToString();
+                    txtresult.Text = s.AddMinutes(+(double)x.minute).ToString();
+                    txtfrom.Text = s.ToString() + " " + s.DayOfWeek;
                 }
             }
             else
@@ -194,6 +197,33 @@ txtfrom.Text = s.ToString() + " " + s.DayOfWeek;
             }
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in infopanel.Controls)
+            {
+                c.Text = "";
+            }
+            txtfilecode.Text = "";
+            txtpatientid.Text = "";
+            foreach (Control cont in groupBox2.Controls)
+            {
+                if (cont is CheckBox cb)
+                    cb.Checked = false;
+                if (cont is RadioButton cr)
+                    cr.Checked = false;
+
+            }
+            foreach (Control cont in groupBox3.Controls)
+            {
+                if (cont is CheckBox cb)
+                    cb.Checked = false;
+                if (cont is RadioButton cr)
+                    cr.Checked = false;
+
+            }
 
         }
         //public void getnewturn(nobatdehi nobats)
