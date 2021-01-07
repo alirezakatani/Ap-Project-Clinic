@@ -17,25 +17,43 @@ namespace Ap_Project_Clinic_
         public DateTime datecheck { get; set; }
         //static List<employes> empsta = new List<employes>();
         List<employes> empp = new List<employes>();
-        //static List<employes> accsta = new List<employes>();
+        static List<employes> accsta = new List<employes>();
         string pathckeck = rateform.getpath() + "\\checkoutemployee.txt";
         string path = rateform.getpath() + "\\eminfo.txt";
         public employes(string idnumber)
         {
 
-            string[] allinform1 = System.IO.File.ReadAllLines(path);
-            for (int i = 0; i < allinform1.Length; i++)
+            //string[] allinform1 = System.IO.File.ReadAllLines(path);
+            //for (int i = 0; i < allinform1.Length; i++)
+            //{
+            //    string[] personinform = allinform1[i].Split('*');
+            //    if (personinform[4] == idnumber)
+            //    {
+            //        name = personinform[0];
+            //        familyname = personinform[1];
+            //        salary = Convert.ToDouble(personinform[2]);
+            //        Job = personinform[3];
+            //        this.idnumber = personinform[4];
+            //        account = personinform[5];
+            //        this.lastcash = Convert.ToDouble(personinform[6]);
+            //    }
+
+            //}
+            empp = readandwriteemp.set();
+            for (int i = 0; i < empp.Count; i++)
             {
-                string[] personinform = allinform1[i].Split('*');
-                if (personinform[4] == idnumber)
+                if(empp[i].idnumber==idnumber)
                 {
-                    name = personinform[0];
-                    familyname = personinform[1];
-                    salary = Convert.ToDouble(personinform[2]);
-                    Job = personinform[3];
-                    this.idnumber = personinform[4];
-                    account = personinform[5];
-                    this.lastcash = Convert.ToDouble(personinform[6]);
+                    name = empp[i].name;
+                    familyname = empp[i].familyname;
+                    salary = empp[i].salary;
+                    Job = empp[i].Job;
+                    this.idnumber = empp[i].idnumber;
+                    account = empp[i].account;
+                    this.lastcash = empp[i].lastcash;
+                    phone = empp[i].phone;
+                    datecheck = empp[i].datecheck;
+
                 }
 
             }
@@ -52,25 +70,56 @@ namespace Ap_Project_Clinic_
         }
         public employes(string named, string job)
         {
-            string[] allinform1 = System.IO.File.ReadAllLines(path);
-            for (int i = 0; i < allinform1.Length; i++)
+            //string[] allinform1 = System.IO.File.ReadAllLines(path);
+            //for (int i = 0; i < allinform1.Length; i++)
+            //{
+            //    string[] personinform = allinform1[i].Split('*');
+            //    if (personinform[0] == named && personinform[3] == job)
+            //    {
+            //        name = personinform[0];
+            //        familyname = personinform[1];
+            //        salary = Convert.ToDouble(personinform[2]);
+            //        Job = personinform[3];
+            //        idnumber = personinform[4];
+            //        account = personinform[5];
+            //        this.lastcash = Convert.ToDouble(personinform[6]);
+            //    }
+
+            //}
+            empp = readandwriteemp.set();
+            for (int i = 0; i < empp.Count; i++)
             {
-                string[] personinform = allinform1[i].Split('*');
-                if (personinform[0] == named && personinform[3] == job)
+                if (empp[i].name == named&&empp[i].Job==job)
                 {
-                    name = personinform[0];
-                    familyname = personinform[1];
-                    salary = Convert.ToDouble(personinform[2]);
-                    Job = personinform[3];
-                    idnumber = personinform[4];
-                    account = personinform[5];
-                    this.lastcash = Convert.ToDouble(personinform[6]);
+                    name = empp[i].name;
+                    familyname = empp[i].familyname;
+                    salary = empp[i].salary;
+                    Job = empp[i].Job;
+                    this.idnumber = empp[i].idnumber;
+                    account = empp[i].account;
+                    this.lastcash = empp[i].lastcash;
+                    phone = empp[i].phone;
+                    datecheck = empp[i].datecheck;
+
                 }
 
             }
 
+
         }
-       
+        public employes(string name, string familyname, string accountin, double lastcash, double salary, string idnumber,string job)
+        {
+            this.name = name;
+            this.familyname = familyname;
+            this.account = accountin;
+            this.lastcash = lastcash;
+            this.salary = salary;
+            this.idnumber = idnumber;
+            this.Job = job;
+
+        }
+
+
         public string checkout()
         {
             string ret = "";
@@ -107,9 +156,9 @@ namespace Ap_Project_Clinic_
             foreach (string em in emp)
             {
                 cost = em.Split('*');
-                empp.Add(new employes(cost[4]));
+                empp.Add(new employes(cost[0],cost[1],cost[5],Convert.ToDouble(cost[6]),Convert.ToDouble(cost[2]),cost[4],cost[3]));
             }
-
+          
             return empp;
 
         }

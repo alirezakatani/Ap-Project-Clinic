@@ -13,7 +13,6 @@ namespace Ap_Project_Clinic_
         public Double lastcash { get; set; }
         public DateTime datecheck { get; set; }
         public List<shareman> share = new List<shareman>();
-        List<shareman> acc = new List<shareman>();
         string path = rateform.getpath() + @"\shareman.txt";
         string pathckeck = rateform.getpath() + "\\checkoutemployee.txt";
         public shareman(string idnumber)//read from file
@@ -62,7 +61,15 @@ namespace Ap_Project_Clinic_
             this.lastcash = lastcash;
             datecheck = date;
         }
-
+        public shareman(string name, string familyname, string accountin, double lastcash,double salary,string idnumber)
+        {
+            this.name = name;
+            this.familyname = familyname;
+            this.account = accountin;
+            this.lastcash = lastcash;
+            this.salary = salary;
+            this.idnumber = idnumber;
+        }
         public string checkout()
         {
             double allprofit = finantial.finalcheckout1();
@@ -113,7 +120,8 @@ namespace Ap_Project_Clinic_
                 for (int i = 0; i < allinform1.Length; i++)
                 {
                     string[] personinform = allinform1[i].Split('*');
-                    share.Add(new shareman(personinform[4]));
+
+                    share.Add(new shareman(personinform[0], personinform[1], personinform[5], Convert.ToDouble(personinform[6]), Convert.ToDouble(personinform[2]), personinform[4]));
 
                 }
 
