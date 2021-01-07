@@ -437,7 +437,6 @@ namespace Ap_Project_Clinic_
         public managenobat(nobatdehi newnobat)
         {
             s.newnobat = newnobat;
-
             this.timenoabt = s.getallnobat(newnobat);
             this.newlist = read.getallnobatbasespeficaation();
             this.newnobat = newnobat;
@@ -600,6 +599,14 @@ namespace Ap_Project_Clinic_
         string deletepath = rateform.getpath() + "\\deletednobat.txt";
         //DateTime day;
         public nobatdehi newnobat { get; set; }
+        public readandwrite()
+        {
+
+        }
+        public readandwrite(nobatdehi nobat)
+        {
+            newnobat = nobat;
+        }
         public List<DateTime> getallnobat(nobatdehi nobat)//getallnobats
         {
             //string[] nobats = System.IO.File.ReadAllLines(path);
