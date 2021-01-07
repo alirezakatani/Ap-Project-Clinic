@@ -19,23 +19,40 @@ namespace Ap_Project_Clinic_
         public shareman(string idnumber)//read from file
         {
 
-            string[] allinform1 = System.IO.File.ReadAllLines(path);
-            for (int i = 0; i < allinform1.Length; i++)
+            //string[] allinform1 = System.IO.File.ReadAllLines(path);
+            //for (int i = 0; i < allinform1.Length; i++)
+            //{
+            //    string[] personinform = allinform1[i].Split('*');
+            //    if (personinform[4] == idnumber)
+            //    {
+            //        name = personinform[0];
+            //        familyname = personinform[1];
+            //        salary = Convert.ToDouble(personinform[2]);
+            //        idnumber = personinform[4];
+            //        account = personinform[5];
+            //        lastcash = Convert.ToDouble(personinform[6]);
+            //        this.idnumber = personinform[4];
+
+            //    }
+
+            //}
+            share = readandwritesha.set();
+            for (int i = 0; i < share.Count; i++)
             {
-                string[] personinform = allinform1[i].Split('*');
-                if (personinform[4] == idnumber)
+                if(share[i].idnumber==idnumber)
                 {
-                    name = personinform[0];
-                    familyname = personinform[1];
-                    salary = Convert.ToDouble(personinform[2]);
-                    idnumber = personinform[4];
-                    account = personinform[5];
-                    lastcash = Convert.ToDouble(personinform[6]);
-                    this.idnumber = personinform[4];
+                    name = share[i].name;
+                    familyname = share[i].familyname;
+                    salary = share[i].salary;
+                    idnumber = share[i].idnumber;
+                    account = share[i].account;
+                    lastcash = share[i].lastcash;
+                    this.idnumber = share[i].idnumber;
 
                 }
 
             }
+
         }
         public shareman(string name, string familyname, string accountin, double lastcash, DateTime date)
         {

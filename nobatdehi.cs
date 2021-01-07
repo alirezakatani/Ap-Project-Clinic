@@ -517,30 +517,6 @@ namespace Ap_Project_Clinic_
         }
         public DateTime another()
         {
-
-            //timenoabt = s.getalldatebaseonanotherday();
-            //timenoabt.Sort();
-            //for (int i = 0; i < timenoabt.Count - 1; i++)
-            //{
-            //    if (timenoabt[i].Day != timenoabt[i + 1].Day)
-            //    {
-            //        DateTime zs = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, timenoabt[i].Hour, timenoabt[i].Minute, 0);
-            //        DateTime xs = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, 20, 0, 0);
-            //        TimeSpan zx = xs - zs;
-            //        if (zx.TotalMinutes > newnobat.minute && zx.TotalMinutes > 0)
-            //        {
-            //            zs = zs.AddMinutes(newnobat.minute);
-            //            newnobat.date = zs;
-            //            timenoabt.Add(newnobat.date);
-            //            s.writeinfile(newnobat, timenoabt);
-            //            return zs;
-            //        }
-            //        else
-            //            continue;
-            //    }
-
-
-            //}
             DateTime another;
             Boolean flag = true;
             int i = 0;
@@ -561,7 +537,6 @@ namespace Ap_Project_Clinic_
                     if (another.DayOfWeek == DayOfWeek.Sunday || another.DayOfWeek == DayOfWeek.Tuesday || another.DayOfWeek == DayOfWeek.Thursday)
                     {
                         another = another.AddDays(1);
-
 
                     }
 
@@ -600,33 +575,7 @@ namespace Ap_Project_Clinic_
             return new DateTime(1, 1, 1, 1, 1, 1);
 
 
-            //DateTime another = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day + 1, 15, 0, 0);
-            //    if (newnobat.noteven == true)
-            //    {
-            //        if ( ooop.DayOfWeek == DayOfWeek.Saturday || ooop.DayOfWeek == DayOfWeek.Monday || ooop.DayOfWeek == DayOfWeek.Wednesday)
-            //        {
-            //           ooop=ooop.AddDays(1);
-
-            //        }
-            //    }
-            //    else if (newnobat.notodd == true)
-            //    {
-            //        if (ooop.DayOfWeek == DayOfWeek.Sunday || ooop.DayOfWeek == DayOfWeek.Tuesday || ooop.DayOfWeek == DayOfWeek.Thursday)
-            //        {
-            //           ooop= ooop.AddDays(1);
-
-
-            //        }
-
-            //    }
-            //    if (ooop.DayOfWeek == DayOfWeek.Friday)
-            //    {
-            //        ooop = ooop.AddDays(1);
-            //    }
-            //    newnobat.date = ooop;
-            //    timenoabt.Add(newnobat.date);
-            //    s.writeinfile(newnobat, timenoabt);
-            //    return ooop;
+            
         }
     }
     public class readandwrite : readandwritefromfile
