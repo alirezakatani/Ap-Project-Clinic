@@ -24,6 +24,10 @@ namespace Ap_Project_Clinic_
             System.IO.File.AppendAllText(path, saves);
             Close();
         }
-      
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.IO.File.Delete(path);
+        }
     }
 }

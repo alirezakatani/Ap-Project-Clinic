@@ -43,7 +43,11 @@ namespace Ap_Project_Clinic_
             this.txtsalary = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtjob = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -112,6 +116,8 @@ namespace Ap_Project_Clinic_
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.save);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtsalary);
@@ -176,16 +182,48 @@ namespace Ap_Project_Clinic_
             this.txtjob.Size = new System.Drawing.Size(139, 27);
             this.txtjob.TabIndex = 31;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(160, 362);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 43);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "clear";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(396, 23);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(454, 414);
+            this.dataGridView2.TabIndex = 32;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(68, 362);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 43);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "show";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // employessalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 449);
+            this.ClientSize = new System.Drawing.Size(862, 449);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
             this.Name = "employessalary";
             this.Text = "employessalary";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +244,8 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtjob;
         private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

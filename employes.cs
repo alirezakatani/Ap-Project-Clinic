@@ -96,10 +96,11 @@ namespace Ap_Project_Clinic_
     static class readandwriteemp
     {
         static List<employes> empp = new List<employes>();
+        static List<Ipay> empipay = new List<Ipay>();
         static string path = rateform.getpath() + "\\eminfo.txt";
         public static List<employes> set()
         {
-
+            empipay.Clear();
             empp.Clear();
             string[] emp = System.IO.File.ReadAllLines(path);
             string[] cost;
@@ -170,6 +171,15 @@ namespace Ap_Project_Clinic_
             return null;
 
 
+        }
+        public static List<Ipay> getall()
+        {
+            set();
+            for (int i = 0; i < empp.Count; i++)
+            {
+                empipay.Add(empp[i]);
+            }
+            return empipay;
         }
 
     }

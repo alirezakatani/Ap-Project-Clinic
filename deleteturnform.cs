@@ -33,5 +33,11 @@ namespace Ap_Project_Clinic_
             }    
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string deletepath = rateform.getpath() + "\\deletednobat.txt";
+            System.IO.File.Delete(deletepath);
+        }
     }
 }

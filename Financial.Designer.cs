@@ -36,6 +36,8 @@ namespace Ap_Project_Clinic_
             this.btnmedical = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +53,7 @@ namespace Ap_Project_Clinic_
             // btnEquity
             // 
             this.btnEquity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnEquity.Location = new System.Drawing.Point(98, 115);
+            this.btnEquity.Location = new System.Drawing.Point(28, 113);
             this.btnEquity.Name = "btnEquity";
             this.btnEquity.Size = new System.Drawing.Size(153, 46);
             this.btnEquity.TabIndex = 1;
@@ -62,7 +64,7 @@ namespace Ap_Project_Clinic_
             // btnsalary
             // 
             this.btnsalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnsalary.Location = new System.Drawing.Point(98, 163);
+            this.btnsalary.Location = new System.Drawing.Point(206, 113);
             this.btnsalary.Name = "btnsalary";
             this.btnsalary.Size = new System.Drawing.Size(153, 51);
             this.btnsalary.TabIndex = 3;
@@ -73,7 +75,7 @@ namespace Ap_Project_Clinic_
             // btnClinic
             // 
             this.btnClinic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnClinic.Location = new System.Drawing.Point(98, 217);
+            this.btnClinic.Location = new System.Drawing.Point(377, 113);
             this.btnClinic.Name = "btnClinic";
             this.btnClinic.Size = new System.Drawing.Size(153, 52);
             this.btnClinic.TabIndex = 5;
@@ -84,7 +86,7 @@ namespace Ap_Project_Clinic_
             // btnmedical
             // 
             this.btnmedical.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnmedical.Location = new System.Drawing.Point(98, 275);
+            this.btnmedical.Location = new System.Drawing.Point(28, 181);
             this.btnmedical.Name = "btnmedical";
             this.btnmedical.Size = new System.Drawing.Size(153, 52);
             this.btnmedical.TabIndex = 6;
@@ -95,7 +97,7 @@ namespace Ap_Project_Clinic_
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(98, 333);
+            this.button1.Location = new System.Drawing.Point(206, 181);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 52);
             this.button1.TabIndex = 7;
@@ -106,7 +108,7 @@ namespace Ap_Project_Clinic_
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.Location = new System.Drawing.Point(98, 391);
+            this.button2.Location = new System.Drawing.Point(377, 181);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 52);
             this.button2.TabIndex = 8;
@@ -114,11 +116,35 @@ namespace Ap_Project_Clinic_
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button3.Location = new System.Drawing.Point(28, 257);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 52);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "payment installment";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button4.Location = new System.Drawing.Point(206, 257);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 52);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "bime";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // FinancialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 491);
+            this.ClientSize = new System.Drawing.Size(574, 378);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnmedical);
@@ -143,5 +169,7 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Button btnmedical;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

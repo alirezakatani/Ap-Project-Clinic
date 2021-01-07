@@ -40,6 +40,24 @@ namespace Ap_Project_Clinic_
         Boolean notodd { get; set; }
         int shomarenobat { get; set; }
     }
+    public interface Ipayment
+    {
+         DateTime first { get; set; }
+         string doctorname { get; set; }
+         double money { get; set; }
+         int numberofpayment { get; set; }
+
+    }
+    public interface IBime
+    {
+        double percent { get; set; }
+        string name { get; set; }
+        string familyname { get; set; }
+        string id { get; set; }
+
+
+
+    }
 
    
 

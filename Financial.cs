@@ -53,5 +53,17 @@ namespace Ap_Project_Clinic_
             allpayform pay = new allpayform();
             pay.Show(this);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            payment_Installment pay = new payment_Installment();
+            pay.Show(this);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Bimes x = new Bimes();
+            x.Show();
+        }
     }
 }

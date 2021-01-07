@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtkind = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnsave
@@ -79,11 +80,22 @@
             this.txtkind.Size = new System.Drawing.Size(132, 22);
             this.txtkind.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(121, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 32);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "clear file";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // medicalexpform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 188);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtkind);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtkind;
+        private System.Windows.Forms.Button button1;
     }
 }

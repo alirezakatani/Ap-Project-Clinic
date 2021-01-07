@@ -77,6 +77,11 @@ namespace Ap_Project_Clinic_
                 }
 
             }
+            if(date.DayOfWeek==DayOfWeek.Friday)
+            {
+                MessageBox.Show("its closed in fridays");
+                return;
+            }
             if (rbExamination.Checked == true)
             {
                 work = "moayene";

@@ -39,7 +39,7 @@ namespace Ap_Project_Clinic_
             // btnrating
             // 
             this.btnrating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnrating.Location = new System.Drawing.Point(105, 155);
+            this.btnrating.Location = new System.Drawing.Point(26, 98);
             this.btnrating.Name = "btnrating";
             this.btnrating.Size = new System.Drawing.Size(153, 46);
             this.btnrating.TabIndex = 8;
@@ -51,7 +51,7 @@ namespace Ap_Project_Clinic_
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(121, 97);
+            this.label1.Location = new System.Drawing.Point(22, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 7;
@@ -60,7 +60,7 @@ namespace Ap_Project_Clinic_
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(105, 218);
+            this.button1.Location = new System.Drawing.Point(204, 98);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 46);
             this.button1.TabIndex = 9;
@@ -71,7 +71,7 @@ namespace Ap_Project_Clinic_
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.Location = new System.Drawing.Point(105, 284);
+            this.button2.Location = new System.Drawing.Point(26, 168);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 46);
             this.button2.TabIndex = 10;
@@ -82,7 +82,7 @@ namespace Ap_Project_Clinic_
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button3.Location = new System.Drawing.Point(105, 350);
+            this.button3.Location = new System.Drawing.Point(204, 168);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(153, 46);
             this.button3.TabIndex = 11;
@@ -94,7 +94,7 @@ namespace Ap_Project_Clinic_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 518);
+            this.ClientSize = new System.Drawing.Size(402, 269);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

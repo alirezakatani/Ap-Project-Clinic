@@ -58,6 +58,13 @@
     <Compile Include="allturnsform.Designer.cs">
       <DependentUpon>allturnsform.cs</DependentUpon>
     </Compile>
+    <Compile Include="bime.cs" />
+    <Compile Include="Bimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bimes.Designer.cs">
+      <DependentUpon>Bimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="cliniccosts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +93,13 @@
     </Compile>
     <Compile Include="finantial.cs" />
     <Compile Include="interfaces.cs" />
+    <Compile Include="payment Installment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payment Installment.Designer.cs">
+      <DependentUpon>payment Installment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paymentturn.cs" />
     <Compile Include="turns.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +154,9 @@
     <EmbeddedResource Include="allturnsform.resx">
       <DependentUpon>allturnsform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bimes.resx">
+      <DependentUpon>Bimes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cliniccosts.resx">
       <DependentUpon>cliniccosts.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Financial.resx">
       <DependentUpon>Financial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payment Installment.resx">
+      <DependentUpon>payment Installment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="turns.resx">
       <DependentUpon>turns.cs</DependentUpon>

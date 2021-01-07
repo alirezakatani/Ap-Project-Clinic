@@ -37,7 +37,7 @@ namespace Ap_Project_Clinic_
             // 
             // btnFinancial
             // 
-            this.btnFinancial.Location = new System.Drawing.Point(95, 182);
+            this.btnFinancial.Location = new System.Drawing.Point(33, 132);
             this.btnFinancial.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinancial.Name = "btnFinancial";
             this.btnFinancial.Size = new System.Drawing.Size(144, 56);
@@ -48,7 +48,7 @@ namespace Ap_Project_Clinic_
             // 
             // btnMedical
             // 
-            this.btnMedical.Location = new System.Drawing.Point(95, 246);
+            this.btnMedical.Location = new System.Drawing.Point(199, 137);
             this.btnMedical.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedical.Name = "btnMedical";
             this.btnMedical.Size = new System.Drawing.Size(144, 51);
@@ -60,7 +60,7 @@ namespace Ap_Project_Clinic_
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 63);
+            this.label1.Location = new System.Drawing.Point(29, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 20);
@@ -70,7 +70,7 @@ namespace Ap_Project_Clinic_
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 112);
+            this.label2.Location = new System.Drawing.Point(29, 81);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 20);
@@ -81,7 +81,7 @@ namespace Ap_Project_Clinic_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 444);
+            this.ClientSize = new System.Drawing.Size(408, 241);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMedical);

@@ -53,6 +53,14 @@ namespace Ap_Project_Clinic_
             this.label9 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +85,7 @@ namespace Ap_Project_Clinic_
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(619, 319);
+            this.button1.Location = new System.Drawing.Point(593, 367);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 36);
             this.button1.TabIndex = 2;
@@ -106,7 +114,7 @@ namespace Ap_Project_Clinic_
             // txtturn
             // 
             this.txtturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtturn.Location = new System.Drawing.Point(462, 99);
+            this.txtturn.Location = new System.Drawing.Point(512, 103);
             this.txtturn.Name = "txtturn";
             this.txtturn.Size = new System.Drawing.Size(149, 27);
             this.txtturn.TabIndex = 10;
@@ -124,7 +132,7 @@ namespace Ap_Project_Clinic_
             // txtfamilyname
             // 
             this.txtfamilyname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfamilyname.Location = new System.Drawing.Point(462, 57);
+            this.txtfamilyname.Location = new System.Drawing.Point(512, 61);
             this.txtfamilyname.Name = "txtfamilyname";
             this.txtfamilyname.Size = new System.Drawing.Size(149, 27);
             this.txtfamilyname.TabIndex = 12;
@@ -159,7 +167,7 @@ namespace Ap_Project_Clinic_
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(20, 257);
+            this.button2.Location = new System.Drawing.Point(3, 293);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 30);
             this.button2.TabIndex = 15;
@@ -188,7 +196,7 @@ namespace Ap_Project_Clinic_
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(466, 319);
+            this.button3.Location = new System.Drawing.Point(463, 367);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 36);
             this.button3.TabIndex = 18;
@@ -199,12 +207,13 @@ namespace Ap_Project_Clinic_
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(308, 319);
+            this.button4.Location = new System.Drawing.Point(333, 367);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 36);
             this.button4.TabIndex = 19;
             this.button4.Text = "get new turn";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // datenow
             // 
@@ -225,7 +234,7 @@ namespace Ap_Project_Clinic_
             // 
             // turndate
             // 
-            this.turndate.Location = new System.Drawing.Point(462, 25);
+            this.turndate.Location = new System.Drawing.Point(486, 23);
             this.turndate.Name = "turndate";
             this.turndate.Size = new System.Drawing.Size(175, 22);
             this.turndate.TabIndex = 22;
@@ -243,7 +252,7 @@ namespace Ap_Project_Clinic_
             // txtdoctor
             // 
             this.txtdoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdoctor.Location = new System.Drawing.Point(462, 147);
+            this.txtdoctor.Location = new System.Drawing.Point(512, 151);
             this.txtdoctor.Name = "txtdoctor";
             this.txtdoctor.Size = new System.Drawing.Size(149, 27);
             this.txtdoctor.TabIndex = 25;
@@ -261,7 +270,7 @@ namespace Ap_Project_Clinic_
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(161, 319);
+            this.button5.Location = new System.Drawing.Point(203, 367);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 36);
             this.button5.TabIndex = 26;
@@ -271,13 +280,21 @@ namespace Ap_Project_Clinic_
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.datenow);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.txtdoctor);
             this.panel1.Controls.Add(this.txtname);
             this.panel1.Controls.Add(this.txtpayment);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtphone);
@@ -291,19 +308,99 @@ namespace Ap_Project_Clinic_
             this.panel1.Controls.Add(this.txtfilecode);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(703, 239);
+            this.panel1.Size = new System.Drawing.Size(699, 335);
             this.panel1.TabIndex = 27;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(3, 257);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(157, 30);
+            this.button6.TabIndex = 28;
+            this.button6.Text = "Pay Installment";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(166, 257);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 27);
+            this.textBox1.TabIndex = 26;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(12, 367);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(185, 36);
+            this.button7.TabIndex = 29;
+            this.button7.Text = "pay all today installment";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(321, 204);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(194, 21);
+            this.checkBox1.TabIndex = 26;
+            this.checkBox1.Text = "have Insurance(bime)   id:";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(511, 202);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(149, 27);
+            this.textBox2.TabIndex = 27;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(538, 260);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(125, 27);
+            this.textBox3.TabIndex = 29;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(425, 260);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 20);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "new payment";
+            // 
+            // button8
+            // 
+            this.button8.Enabled = false;
+            this.button8.Location = new System.Drawing.Point(321, 257);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(93, 30);
+            this.button8.TabIndex = 30;
+            this.button8.Text = "check";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // turns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 398);
+            this.ClientSize = new System.Drawing.Size(737, 505);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "turns";
             this.Text = "turns";
@@ -340,5 +437,13 @@ namespace Ap_Project_Clinic_
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button8;
     }
 }
