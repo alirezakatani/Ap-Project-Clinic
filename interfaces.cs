@@ -31,7 +31,7 @@ namespace Ap_Project_Clinic_
         string phone { get; set; }
         DateTime date { get; set; }
         string work { get; set; }
-        string path { get; set; }
+        
         int minute { get; set; }
         string idnumber { get; set; }
         string fileid { get; set; }

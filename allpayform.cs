@@ -36,10 +36,21 @@ namespace Ap_Project_Clinic_
         {
             string path = Application.StartupPath + "\\medicalexpnses.txt";
             string pathckeck = rateform.getpath() + "\\checkoutemployee.txt";
-            textBox1.Text = System.IO.File.ReadAllText(pathckeck) + "\n"+System.IO.File.ReadAllText(path)+"\n";
-        
-          
-           
+            try
+            {
+                textBox1.Text = System.IO.File.ReadAllText(pathckeck) + "\n" + System.IO.File.ReadAllText(path) + "\n";
+
+
+            }
+            catch
+            {
+
+                return;
+            }
+
+
+
+
         }
 
     }

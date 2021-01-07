@@ -25,21 +25,22 @@ namespace Ap_Project_Clinic_
         public static void payalltoday(DateTime today)
         {
             payments = readandwritepayment.set();
-            paymentturn refre = new paymentturn();
+           
+       
             for (int i = 0; i < payments.Count; i++)
             {
-                refre = payments[i];
+               
                 if (payments[i].first.DayOfYear == today.DayOfYear && payments[i].first.Year == today.Year && payments[i].numberofpayment > 0)
                 {
                     string saveincomefile = rateform.getpath() + "\\income.txt";
                     string cost = payments[i].doctorname + "*" + payments[i].money + "\n";
                     System.IO.File.AppendAllText(saveincomefile, cost);
-                    payments.RemoveAt(i);
-                    refre.first = refre.first.AddDays(30);
-                    refre.numberofpayment--;
-                    payments.Add(refre);
+                    payments[i].first = payments[i].first.AddDays(30);
+                    payments[i].numberofpayment--;
+                    
 
                 }
+               
 
             }
             readandwritepayment.writelist(payments);
@@ -57,7 +58,7 @@ namespace Ap_Project_Clinic_
         public static void writeinfile(paymentturn pay)
         {
             string todaypays = pay.doctorname + '*' + pay.money + '*' + pay.numberofpayment + '*' + pay.first.ToString()+"\n";
-            System.IO.File.WriteAllText(path, todaypays);
+            System.IO.File.AppendAllText(path, todaypays);
         }
         public static List<paymentturn> set()
         {

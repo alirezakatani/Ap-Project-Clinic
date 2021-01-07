@@ -45,7 +45,7 @@ namespace Ap_Project_Clinic_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            turns = read.getlistofallturnofoneperson(textBox1.Text);
+            turns = read.getlistofalldeltedturn(textBox1.Text);
             foreach (nobatdehi turn in turns)
             {
                 iturnlist.Add(turn);

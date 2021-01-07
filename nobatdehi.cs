@@ -324,7 +324,7 @@ namespace Ap_Project_Clinic_
         public string phone { get; set; }
         public DateTime date { get; set; }
         public string work { get; set; }
-        public string path { get; set; }
+        public string path =rateform.getpath();
         public int minute { get; set; }
         public string idnumber { get; set; }
         public string fileid { get; set; }
@@ -333,11 +333,12 @@ namespace Ap_Project_Clinic_
         public Boolean notodd { get; set; }
         public int shomarenobat { get; set; }
         List<DateTime> timenoabt = new List<DateTime>();
+        List<nobatdehi> nobat = new List<nobatdehi>();
         int minutemoayene = 10;
         int minutedarmansathi1 = 20;
         int minutedarmansathi2 = 30;
         int minutedarmanreshe = 40;
-
+         
         public nobatdehi(string name, string familyname, string idnumber, string work, string phone, DateTime date, string fileid, string doctornames, Boolean ev, Boolean od)
         {
             path = rateform.getpath();
@@ -358,7 +359,7 @@ namespace Ap_Project_Clinic_
         }
         public nobatdehi(DateTime date, string fileid, string work, string doctornames, Boolean ev, Boolean od)
         {
-            path = rateform.getpath();
+           
             this.idnumber = fileid;
 
             this.date = date;
@@ -373,14 +374,14 @@ namespace Ap_Project_Clinic_
         }
         public nobatdehi(string fileid)
         {
-            path = rateform.getpath();
+         
 
             getfromfileid(fileid);
 
         }
         public nobatdehi()
         {
-            path = rateform.getpath();
+            
         }
 
 
@@ -399,32 +400,11 @@ namespace Ap_Project_Clinic_
 
         public int getfromfileid(string fileid)
         {
-            string[] allinform1 = System.IO.File.ReadAllLines(path + "\\nobat.txt");
-            for (int i = 0; i < allinform1.Length; i++)
-            {
-                string[] personinform = allinform1[i].Split('*');
-                string[] stime = personinform[0].Split('/');
-                string[] ttime = personinform[1].Split(':');
-                DateTime day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
-                if (personinform[6] == fileid)
-                {
-
-                    this.name = personinform[4];
-                    this.familyname = personinform[5];
-                    this.idnumber = personinform[6];
-                    this.phone = personinform[7];
-                    this.shomarenobat = Convert.ToInt32(personinform[8]);
-                    this.date = day;
-                    this.doctorname = personinform[11];
-                    this.fileid = personinform[6];
-                    this.noteven = Convert.ToBoolean(personinform[9]);
-                    this.notodd = Convert.ToBoolean(personinform[10]);
-                    this.minute = Convert.ToInt32(personinform[2]);
-                    this.work = personinform[3];
-                    return 1;
-                }
-
-            }
+            readandwrite read = new readandwrite();
+            nobat = read.getallnobatbasespeficaation();
+            this.name = name;
+            this.familyname = familyname;
+            this.phone = phone;
             return 0;
         }
         public static string nobatdehiToString(nobatdehi nobat)
@@ -435,7 +415,10 @@ namespace Ap_Project_Clinic_
         public static nobatdehi StringTonobatdehi(string nobat)
         {
             string[] personinform = nobat.Split('*');
-            nobatdehi nobats = new nobatdehi(personinform[6]);
+            string[] daten = personinform[0].Split('/');
+            string[] datm = personinform[1].Split(':');
+            DateTime x = new DateTime(Convert.ToInt32(daten[0]), Convert.ToInt32(daten[1]), Convert.ToInt32(daten[2]), Convert.ToInt32(datm[0]), Convert.ToInt32(datm[1]), 0);
+            nobatdehi nobats = new nobatdehi(personinform[4], personinform[5], personinform[6], personinform[3], personinform[7], x, personinform[6], personinform[11], Convert.ToBoolean(personinform[9]), Convert.ToBoolean(personinform[10])); 
             return nobats;
         }
 
@@ -535,56 +518,115 @@ namespace Ap_Project_Clinic_
         public DateTime another()
         {
 
-            timenoabt = s.getallnobat(newnobat);
-            timenoabt.Sort();
-            for (int i = 0; i < timenoabt.Count - 1; i++)
+            //timenoabt = s.getalldatebaseonanotherday();
+            //timenoabt.Sort();
+            //for (int i = 0; i < timenoabt.Count - 1; i++)
+            //{
+            //    if (timenoabt[i].Day != timenoabt[i + 1].Day)
+            //    {
+            //        DateTime zs = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, timenoabt[i].Hour, timenoabt[i].Minute, 0);
+            //        DateTime xs = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, 20, 0, 0);
+            //        TimeSpan zx = xs - zs;
+            //        if (zx.TotalMinutes > newnobat.minute && zx.TotalMinutes > 0)
+            //        {
+            //            zs = zs.AddMinutes(newnobat.minute);
+            //            newnobat.date = zs;
+            //            timenoabt.Add(newnobat.date);
+            //            s.writeinfile(newnobat, timenoabt);
+            //            return zs;
+            //        }
+            //        else
+            //            continue;
+            //    }
+
+
+            //}
+            DateTime another;
+            Boolean flag = true;
+            int i = 0;
+            while (flag)
             {
-                if (timenoabt[i].Day != timenoabt[i + 1].Day)
+                i++;
+                another = newnobat.date.AddDays(1);
+                if (newnobat.noteven == true)
                 {
-                    DateTime zs = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, timenoabt[i].Hour, timenoabt[i].Minute, 0);
-                    DateTime xs = new DateTime(timenoabt[i].Year, timenoabt[i].Month, timenoabt[i].Day, 20, 0, 0);
-                    TimeSpan zx = xs - zs;
-                    if (zx.TotalMinutes > newnobat.minute && zx.TotalMinutes > 0)
+                    if (another.DayOfWeek == DayOfWeek.Saturday || another.DayOfWeek == DayOfWeek.Monday || another.DayOfWeek == DayOfWeek.Wednesday)
                     {
-                        zs = zs.AddMinutes(newnobat.minute);
-                        newnobat.date = zs;
-                        timenoabt.Add(newnobat.date);
-                        s.writeinfile(newnobat, timenoabt);
-                        return zs;
+                        another = another.AddDays(1);
+
                     }
-                    else
-                        continue;
                 }
-
-
-            }
-            
-            DateTime ooop = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day + 1, 15, 0, 0);
-            if (newnobat.noteven == true)
-            {
-                if ( ooop.DayOfWeek == DayOfWeek.Saturday || ooop.DayOfWeek == DayOfWeek.Monday || ooop.DayOfWeek == DayOfWeek.Wednesday)
+                else if (newnobat.notodd == true)
                 {
-                   ooop=ooop.AddDays(1);
-                    
-                }
-            }
-            else if (newnobat.notodd == true)
-            {
-                if (ooop.DayOfWeek == DayOfWeek.Sunday || ooop.DayOfWeek == DayOfWeek.Tuesday || ooop.DayOfWeek == DayOfWeek.Thursday)
-                {
-                   ooop= ooop.AddDays(1);
-                    if(ooop.DayOfWeek==DayOfWeek.Friday)
+                    if (another.DayOfWeek == DayOfWeek.Sunday || another.DayOfWeek == DayOfWeek.Tuesday || another.DayOfWeek == DayOfWeek.Thursday)
                     {
-                        ooop = ooop.AddDays(1);
+                        another = another.AddDays(1);
+
+
                     }
 
                 }
+                if (another.DayOfWeek == DayOfWeek.Friday)
+                {
+                    another = another.AddDays(1);
+                }
+                timenoabt = s.getalldatebaseonanotherday(another);
+                if(timenoabt.Count==0)
+                {
+                    DateTime x = new DateTime(another.Year, another.Month, another.Day, 15, 0, 0);
+                    newnobat.date = x;
+                    s.writeinfile(newnobat, timenoabt);
+                    return x;
+
+                }
+                DateTime zs = timenoabt[timenoabt.Count - 1];
+                DateTime xs = new DateTime(timenoabt[timenoabt.Count-1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day, 20, 0, 0);
+                TimeSpan zx = xs - zs;
+                if (zx.TotalMinutes > newnobat.minute && zx.TotalMinutes > 0)
+                {
+                    zs = zs.AddMinutes(newnobat.minute);
+                    newnobat.date = zs;
+                    timenoabt.Add(newnobat.date);
+                    s.writeinfile(newnobat, timenoabt);
+                   
+                    flag = false;
+                     return zs;
+                }
+                if (i > 200)
+                    break;
+
 
             }
-            newnobat.date = ooop;
-            timenoabt.Add(newnobat.date);
-            s.writeinfile(newnobat, timenoabt);
-            return ooop;
+            return new DateTime(1, 1, 1, 1, 1, 1);
+
+
+            //DateTime another = new DateTime(timenoabt[timenoabt.Count - 1].Year, timenoabt[timenoabt.Count - 1].Month, timenoabt[timenoabt.Count - 1].Day + 1, 15, 0, 0);
+            //    if (newnobat.noteven == true)
+            //    {
+            //        if ( ooop.DayOfWeek == DayOfWeek.Saturday || ooop.DayOfWeek == DayOfWeek.Monday || ooop.DayOfWeek == DayOfWeek.Wednesday)
+            //        {
+            //           ooop=ooop.AddDays(1);
+
+            //        }
+            //    }
+            //    else if (newnobat.notodd == true)
+            //    {
+            //        if (ooop.DayOfWeek == DayOfWeek.Sunday || ooop.DayOfWeek == DayOfWeek.Tuesday || ooop.DayOfWeek == DayOfWeek.Thursday)
+            //        {
+            //           ooop= ooop.AddDays(1);
+
+
+            //        }
+
+            //    }
+            //    if (ooop.DayOfWeek == DayOfWeek.Friday)
+            //    {
+            //        ooop = ooop.AddDays(1);
+            //    }
+            //    newnobat.date = ooop;
+            //    timenoabt.Add(newnobat.date);
+            //    s.writeinfile(newnobat, timenoabt);
+            //    return ooop;
         }
     }
     public class readandwrite : readandwritefromfile
@@ -694,58 +736,46 @@ namespace Ap_Project_Clinic_
             return newlist;
 
         }
-        public List<DateTime> getalldatebaseonanotherday()
+        public List<DateTime> getalldatebaseonanotherday(DateTime date)
         {
+            getandsetalldate();
+            getallnobatbasespeficaation();
+            for (int i = 0; i < newlist.Count; i++)
+            {
+                if (newlist[i].date.Year == date.Year && date.Month == newlist[i].date.Month && date.Day == newlist[i].date.Day)
+                {
+                    timenoabt2.Add(newlist[i].date);
+                }
 
-
-            //string[] nobats = System.IO.File.ReadAllLines(path);
-            //string[] nob;
-            //foreach (string x in nobats)
+            }
+            return timenoabt2;
+            //for (int i = 0; i < timenoabt.Count; i++)
             //{
-            //    nob = x.Split('*');
-            //    string[] stime = nob[0].Split('/');
-            //    string[] ttime = nob[1].Split(':');
-            //    day = new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0);
+
             //    if (newnobat.noteven == true)
             //    {
-            //        if (Convert.ToInt32(stime[2]) >= newnobat.date.Day && day.DayOfWeek != DayOfWeek.Monday && day.DayOfWeek != DayOfWeek.Saturday && day.DayOfWeek != DayOfWeek.Wednesday && day.DayOfWeek != DayOfWeek.Friday && nob[11] == newnobat.doctorname)
+            //        if (timenoabt[i].DayOfYear >= newnobat.date.DayOfYear && timenoabt[i].Year >= newnobat.date.Year&& timenoabt[i].DayOfWeek != DayOfWeek.Monday && timenoabt[i].DayOfWeek != DayOfWeek.Saturday && timenoabt[i].DayOfWeek != DayOfWeek.Wednesday && timenoabt[i].DayOfWeek != DayOfWeek.Friday && newlist[i].doctorname == newnobat.doctorname)
             //        {
-            //            timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+            //            timenoabt2.Add(timenoabt[i]);
+            //        }
+            //    }
+            //    else if(newnobat.notodd==true)
+            //    {
+            //        if (timenoabt[i].DayOfYear >= newnobat.date.DayOfYear && timenoabt[i].Year >= newnobat.date.Year && timenoabt[i].DayOfWeek != DayOfWeek.Sunday && timenoabt[i].DayOfWeek != DayOfWeek.Tuesday && timenoabt[i].DayOfWeek != DayOfWeek.Thursday && timenoabt[i].DayOfWeek != DayOfWeek.Friday && newlist[i].doctorname == newnobat.doctorname)
+            //        {
+            //            timenoabt2.Add(timenoabt[i]);
             //        }
             //    }
             //    else
             //    {
-            //        if (Convert.ToInt32(stime[2]) >= newnobat.date.Day && day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Tuesday && day.DayOfWeek != DayOfWeek.Thursday && day.DayOfWeek != DayOfWeek.Friday && nob[11] == newnobat.doctorname)
+            //        if (timenoabt[i].DayOfYear > newnobat.date.DayOfYear && timenoabt[i].Year >= newnobat.date.Year && timenoabt[i].DayOfWeek != DayOfWeek.Friday && newlist[i].doctorname == newnobat.doctorname)
             //        {
-            //            timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+            //            timenoabt2.Add(timenoabt[i]);
             //        }
             //    }
-
-
             //}
-            //return timenoabt;
-            getandsetalldate();
-            getallnobatbasespeficaation();
-            for (int i = 0; i < timenoabt.Count; i++)
-            {
 
-                if (newnobat.noteven == true)
-                {
-                    if (timenoabt[i].Day >= newnobat.date.Day && timenoabt[i].DayOfWeek != DayOfWeek.Monday && timenoabt[i].DayOfWeek != DayOfWeek.Saturday && timenoabt[i].DayOfWeek != DayOfWeek.Wednesday && timenoabt[i].DayOfWeek != DayOfWeek.Friday && newlist[i].doctorname == newnobat.doctorname)
-                    {
-                        timenoabt2.Add(timenoabt[i]);
-                    }
-                }
-                else
-                {
-                    if (timenoabt[i].Day >= newnobat.date.Day && timenoabt[i].DayOfWeek != DayOfWeek.Sunday && timenoabt[i].DayOfWeek != DayOfWeek.Tuesday && timenoabt[i].DayOfWeek != DayOfWeek.Thursday && timenoabt[i].DayOfWeek != DayOfWeek.Friday && newlist[i].doctorname == newnobat.doctorname)
-                    {
-                        timenoabt2.Add(timenoabt[i]);
-                    }
-                }
-            }
-
-            return timenoabt2;
+            //return timenoabt2;
 
         }
         public List<nobatdehi> getallnobatbasespeanddate(DateTime date)
@@ -772,6 +802,7 @@ namespace Ap_Project_Clinic_
                 if (newlist[i].date.Year == date.Year && date.Month == newlist[i].date.Month && date.Day == newlist[i].date.Day)
                 {
                     newlist2.Add(newlist[i]);
+                    
                 }
 
             }
@@ -810,28 +841,47 @@ namespace Ap_Project_Clinic_
         }
         public List<DateTime> getandsetalldate()
         {
+            //if (timenoabt.Count > 0)
+            //{
+            //    timenoabt.Clear();
+            //    timenoabt2.Clear();
+            //}
+            //string[] nobats = System.IO.File.ReadAllLines(path);
+            //string[] nob;
+            //if (!System.IO.File.Exists(path))
+            //{
+            //    return timenoabt;
+            //}
+            ////set();
+
+
+            //foreach (string x in nobats)
+            //{
+            //    nob = x.Split('*');
+            //    string[] stime = nob[0].Split('/');
+            //    string[] ttime = nob[1].Split(':');
+            //    timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+            //}
+            //return timenoabt;
+             getallnobatbasespeficaation();
             if (timenoabt.Count > 0)
             {
                 timenoabt.Clear();
                 timenoabt2.Clear();
             }
-            string[] nobats = System.IO.File.ReadAllLines(path);
-            string[] nob;
+        
             if (!System.IO.File.Exists(path))
             {
                 return timenoabt;
             }
-            //set();
-
-
-            foreach (string x in nobats)
+           
+            for (int i = 0; i < newlist.Count; i++)
             {
-                nob = x.Split('*');
-                string[] stime = nob[0].Split('/');
-                string[] ttime = nob[1].Split(':');
-                timenoabt.Add(new DateTime(Convert.ToInt32(stime[0]), Convert.ToInt32(stime[1]), Convert.ToInt32(stime[2]), Convert.ToInt32(ttime[0]), Convert.ToInt32(ttime[1]), 0));
+                timenoabt.Add(newlist[i].date);
+
             }
             return timenoabt;
+
 
         }
         public List<nobatdehi> getlistofalldeltedturn(string fileid)
@@ -841,9 +891,6 @@ namespace Ap_Project_Clinic_
             newlist2 = getlistofallturnofoneperson(fileid);
             path = temppath;
             return newlist2;
-
-
-
         }
 
 
