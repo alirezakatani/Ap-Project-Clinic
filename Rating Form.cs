@@ -231,6 +231,12 @@ txtfrom.Text = s.ToString() + " " + s.DayOfWeek;
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            freetime free = new freetime(ratetime.Value);
+            free.Show(this);
+        }
         //public void getnewturn(nobatdehi nobats)
         //{
 

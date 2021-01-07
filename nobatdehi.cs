@@ -577,6 +577,17 @@ namespace Ap_Project_Clinic_
 
             
         }
+        public DateTime getfreetime(DateTime date)
+        {
+            if (timenoabt.Count == 0)
+            {
+                DateTime xs = new DateTime(newnobat.date.Year, newnobat.date.Month, newnobat.date.Day, 15, 0, 0);
+                return xs;
+            }
+              
+            return timenoabt[timenoabt.Count - 1];
+
+        }
     }
     public class readandwrite : readandwritefromfile
     {
